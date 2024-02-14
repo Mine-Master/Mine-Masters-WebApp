@@ -16,6 +16,7 @@ import {
 import TokenLogo from "@/app/assets/Token-Logo.png";
 import Image from "next/image";
 import { bigShoulder } from "@/app/utils/font-loader";
+import { SecondaryButton } from "@/app/components/button/secondary";
 
 export const MinerNft = () => {
   return (
@@ -30,7 +31,7 @@ export const MinerNft = () => {
             in the game.
           </Description>
           <CTAButtonsWrapper>
-            <ComingSoonButton>Comming soon</ComingSoonButton>
+            <ComingSoonButton disabled>Comming soon</ComingSoonButton>
             <LearnMoreButton>Learn more</LearnMoreButton>
           </CTAButtonsWrapper>
           <TokenContainer>
@@ -121,10 +122,6 @@ const ComingSoonButton = styled(PrimaryButton)`
   padding: 16px 56px;
 `;
 
-const LearnMoreButton = styled("h4")`
+const LearnMoreButton = styled(SecondaryButton)`
   padding: 16px 56px;
-  border: none;
-  color: var(--Primary);
-  ${TEXT_24_400}
-  cursor: pointer;
 `;

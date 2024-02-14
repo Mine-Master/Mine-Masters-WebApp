@@ -19,9 +19,14 @@ const ubontu = Ubuntu({
 interface ConnectButtonProps
   extends React.ComponentProps<typeof PrimaryButton> {
   loading?: boolean;
+  disabled?: boolean;
 }
 
-export const ConnectButton = ({ loading, ...props }: ConnectButtonProps) => {
+export const ConnectButton = ({
+  loading,
+  disabled,
+  ...props
+}: ConnectButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <ConnectButtonStyled
@@ -37,6 +42,7 @@ export const ConnectButton = ({ loading, ...props }: ConnectButtonProps) => {
       }
       className={ubontu.className}
       loading={loading ? loading : false}
+      disabled={disabled}
       {...props}
     >
       {loading ? "Loading..." : "Connect Wallet"}
@@ -49,20 +55,4 @@ const ConnectButtonStyled = styled(PrimaryButton)<{ loading: boolean }>`
   ${TEXT_24_400}
   min-width: 268px;
   padding: 14px 24px 14px 16px;
-  ${ubontu.style}
-  &:hover {
-    color: var(--Whitish);
-    /* Gradient/2 color */
-    background: linear-gradient(92.74deg, #9d4edd 4.16%, #5a189a 99.16%);
-    /* Inner-shadow - Hover Primary BTN */
-    box-shadow: inset 0px -4px 8px rgba(36, 0, 70, 0.34);
-  }
-  // style when loading props is true
-  ${(props) =>
-    props.loading &&
-    css`
-      pointer-events: none;
-      color: var(--Whitish);
-      ${ROW_CENTER}
-    `}
 `;

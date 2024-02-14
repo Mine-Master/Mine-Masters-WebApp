@@ -15,46 +15,44 @@ const ubontu = Ubuntu({
   preload: true,
 });
 
-export interface PrimaryProps extends BaseButtonProps {
+export interface SecondaryProps extends BaseButtonProps {
   loading?: boolean;
   disabled?: boolean;
 }
 
-export const PrimaryButton: FC<BaseButtonProps> = ({ children, ...props }) => {
+export const SecondaryButton: FC<BaseButtonProps> = ({
+  children,
+  ...props
+}) => {
   return (
-    <PrimaryButtonStyled className={ubontu.className} {...props}>
+    <SecondaryButtonStyled className={ubontu.className} {...props}>
       {children}
-    </PrimaryButtonStyled>
+    </SecondaryButtonStyled>
   );
 };
 
-export const PrimaryButtonStyled = styled(BaseButton)<PrimaryProps>`
+export const SecondaryButtonStyled = styled(BaseButton)<SecondaryProps>`
   ${ROW_ALIGN_CENTER__SPACE_B};
   padding: 14px 24px 14px 16px;
   gap: 16px;
   height: 60px;
   ${TEXT_24_400}
-
-  background: rgba(254, 247, 255, 0.16);
-  /* Elevation - Primary BTN */
-  box-shadow: 0px 4px 18px rgba(36, 0, 70, 0.28);
+  border: none;
+  background: transparent;
   border-radius: 16px;
   color: var(--Primary);
-  border: 2.5px solid var(--Primary);
   ${ubontu.style}
+
   &:hover {
-    color: var(--Whitish);
-    /* Gradient/2 color */
-    background: linear-gradient(92.74deg, #9d4edd 4.16%, #5a189a 99.16%);
-    /* Inner-shadow - Hover Primary BTN */
-    box-shadow: inset 0px -4px 8px rgba(36, 0, 70, 0.34);
+    color: #3c096c;
+    background: transparent;
   }
   // style when loading props is true
   ${(props) =>
     props.loading &&
     css`
       pointer-events: none;
-      color: var(--Whitish);
+      color: #3c096c;
       ${ROW_CENTER}
     `}
 

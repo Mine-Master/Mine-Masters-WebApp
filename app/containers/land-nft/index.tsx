@@ -15,6 +15,7 @@ import LeftPic from "@/app/assets/Left-Pic.png";
 import RightPic from "@/app/assets/Right-Pic.png";
 import BottomPic from "@/app/assets/Bottom-Pic.png";
 import { TEXT_24_400, TEXT_48_700 } from "@/app/styles/global-typography";
+import { SecondaryButton } from "@/app/components/button/secondary";
 
 export const LandNft = () => {
   return (
@@ -27,7 +28,7 @@ export const LandNft = () => {
           navigate and stake their claim in the pursuit of wealth and control.
         </Description>
         <CTAButtonsWrapper>
-          <ComingSoonButton>Coming soon</ComingSoonButton>
+          <ComingSoonButton disabled>Coming soon</ComingSoonButton>
           <LearnMoreButton>Learn more</LearnMoreButton>
         </CTAButtonsWrapper>
       </LeftSideWrapper>
@@ -85,7 +86,7 @@ const RightSideWrapper = styled("div")`
 const ComingSoonButton = styled(PrimaryButton)`
   padding: 16px 56px;
 `;
-const LearnMoreButton = styled("h4")`
+const LearnMoreButton = styled(SecondaryButton)`
   padding: 16px 56px;
   border: none;
   color: var(--Primary);
