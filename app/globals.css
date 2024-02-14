@@ -1,0 +1,66 @@
+:root {
+  --White: #fff;
+  --Whitish: #fef7ff;
+  --Black: #000;
+  --Primary: #5a189a;
+  --Pastal-Blue: #00caff;
+  --Orange: #ffc14d;
+  --Purple: #2e0056;
+  --Dark-Purple: #240046;
+  --Light-Purple: #9d4edd;
+  --Blackish: #10002b;
+  --Violet: #c77dff;
+}
+
+/* @font-face {
+  font-family: "Atlas";
+  src: url("./styles/fonts/Atlas.ttf") format("truetype");
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  /* font-family: Montserrat, sans-serif; */
+  color: var(--Secondary-Light);
+}
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--Secondary);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Hide Arrows From Input Number  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Hide Arrows From Input Number */
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#__next {
+  min-height: inherit;
+}
