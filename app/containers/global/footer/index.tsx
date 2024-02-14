@@ -22,6 +22,7 @@ import { ConnectButton } from "@/app/components/button/connect";
 import { COMMINUTIES_ITEMS, FOOTER_MENU_ITEMS } from "../constants";
 import { bigShoulder } from "@/app/utils/font-loader";
 import DoubleBulletIcon from "@/app/assets/Double-Bullet.png";
+import { SecondaryButton } from "@/app/components/button/secondary";
 
 export const Footer = () => {
   return (
@@ -152,9 +153,7 @@ const StyledLogo = styled(Image)`
 const ItemWrapper = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
 `;
-const ItemList = styled("div")`
-  ${TEXT_24_400}
-  color: var(--Primary);
+const ItemList = styled(SecondaryButton)`
   padding: 16px;
 `;
 

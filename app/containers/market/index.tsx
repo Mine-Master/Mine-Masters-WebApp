@@ -41,7 +41,7 @@ export const Marketplace = () => {
               <FeatureBox title="Pink Knife" icon={KnifePic.src} />
               <FeatureBoxStyled title="Spacy Food" icon={HamburgerPic.src} />
             </LeftButtons>
-            <StyledPrimaryButton>Comming soon</StyledPrimaryButton>
+            <StyledPrimaryButton disabled>Coming soon</StyledPrimaryButton>
           </ButtonWrapper>
         </ContentContainer>
       </BackgroundImageContainer>

@@ -31,7 +31,7 @@ export const MinerNft = () => {
             in the game.
           </Description>
           <CTAButtonsWrapper>
-            <ComingSoonButton disabled>Comming soon</ComingSoonButton>
+            <ComingSoonButton disabled>Coming soon</ComingSoonButton>
             <LearnMoreButton>Learn more</LearnMoreButton>
           </CTAButtonsWrapper>
           <TokenContainer>

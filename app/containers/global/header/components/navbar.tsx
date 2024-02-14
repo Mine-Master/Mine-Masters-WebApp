@@ -2,6 +2,7 @@ import { ROW_ALIGN_CENTER__SPACE_B } from "@/app/styles/global-styles";
 import { TEXT_24_400 } from "@/app/styles/global-typography";
 import styled from "@emotion/styled";
 import { NAVBAR_ITEMS } from "../../constants";
+import { SecondaryButton } from "@/app/components/button/secondary";
 
 export const Navbar = () => {
   return (
@@ -18,7 +19,6 @@ const NavbarContainer = styled("nav")`
   ${ROW_ALIGN_CENTER__SPACE_B};
 `;
 
-const NavbarItem = styled("div")`
-  color: var(--Primary);
+const NavbarItem = styled(SecondaryButton)`
   padding: 16px;
 `;
