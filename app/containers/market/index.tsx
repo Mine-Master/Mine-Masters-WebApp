@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import MarketplaceBGImage from "@/app/assets/Marketplace.png";
+import MarketplaceBGImage from "@/app/assets/marketplace.png";
 import {
   COLUMN_ALIGN_CENTER__JUSTIFY_END,
   COLUMN_ALIGN_CENTER___JUSTIFY_START,

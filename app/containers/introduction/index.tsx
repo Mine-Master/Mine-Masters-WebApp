@@ -2,7 +2,7 @@ import { COLUMN_ALIGN_START__JUSTIFY_START } from "@/app/styles/global-styles";
 import { TEXT_32_400, TEXT_48_700 } from "@/app/styles/global-typography";
 import styled from "@emotion/styled";
 import BlueSquare from "@/app/assets/Blue-Square.png";
-import OrangeSquare from "@/app/assets/Orange-Square.png";
+import OrangeSquare from "@/app/assets/Orange-square.png";
 import IntroLeftBg from "@/app/assets/Intro-Left-Bg.png";
 import IntroRightBg from "@/app/assets/Intro-Right-Bg.png";
 import Image from "next/image";
