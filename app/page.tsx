@@ -28,4 +28,6 @@ export default function Home() {
   );
 }
 
-const MainStyled = styled("main")``;
+const MainStyled = styled("main")`
+  overflow-x: clip;
+`;

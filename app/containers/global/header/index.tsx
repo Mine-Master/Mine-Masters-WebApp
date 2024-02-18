@@ -53,6 +53,7 @@ export const HeaderContainer = styled("header")<{
 
 const NavbarLogoWrapper = styled("div")`
   width: 88%;
+  min-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   ${ROW_ALIGN_CENTER__SPACE_B};

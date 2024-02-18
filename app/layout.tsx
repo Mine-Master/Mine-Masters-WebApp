@@ -3,8 +3,9 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Header } from "./containers/global/header";
 import { Footer, FooterMargin } from "./containers/global/footer";
+import Head from "next/head";
 
-export const ubontu = Ubuntu({
+const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "MineMasters",
     images: [
       {
-        url: "/public/Social.png",
+        url: "/Social.png",
         width: 1200,
         height: 630,
         alt: "MineMasters",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
       "MineMasters: A strategic crypto game universe where players acquire lands, deploy NFT miners, and navigate between war and peace to build, battle, and prosper in a dynamic economy.",
     images: [
       {
-        url: "/public/Social.png",
+        url: "/Social.png",
         width: 1200,
         height: 630,
         alt: "MineMasters",
