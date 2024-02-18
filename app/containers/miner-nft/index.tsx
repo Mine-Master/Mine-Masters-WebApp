@@ -17,15 +17,10 @@ import Image from "next/image";
 import { bigShoulder } from "@/app/utils/font-loader";
 import { SecondaryButton } from "@/app/components/button/secondary";
 import { Crystals } from "./components/crystals";
-import { useState } from "react";
 
 export const MinerNft = () => {
-  const [componentIsHovered, setComponentIsHovered] = useState(false);
   return (
-    <MinerNftContainer
-      onMouseEnter={() => setComponentIsHovered(true)}
-      onMouseLeave={() => setComponentIsHovered(false)}
-    >
+    <MinerNftContainer>
       <div>
         <LeftSideWrapper>
           <Title>Purchase and deploy miner NFTs</Title>
@@ -47,7 +42,7 @@ export const MinerNft = () => {
           </TokenContainer>
         </LeftSideWrapper>
       </div>
-      <Crystals componentIsHovered={componentIsHovered} />
+      <Crystals />
     </MinerNftContainer>
   );
 };

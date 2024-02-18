@@ -1,4 +1,4 @@
-import { css, styled } from "@mui/material";
+import { css, keyframes, styled } from "@mui/material";
 import Image from "next/image";
 import Image1 from "../../../assets/miner-nft/Vector (1).png";
 import Image2 from "../../../assets/miner-nft/Vector (2).png";
@@ -21,19 +21,17 @@ import Image18 from "../../../assets/miner-nft/Vector (7).png";
 import Image19 from "../../../assets/miner-nft/Group 20.png";
 import Image20 from "../../../assets/miner-nft/Vector (4).png";
 
-interface CrystalsProps {
-  componentIsHovered: boolean;
-}
+interface CrystalsProps {}
 
-export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
+export const Crystals = ({}: CrystalsProps) => {
   const ChangeValueGenerator = () => {
     return Math.floor(Math.random() * 100) - 50;
   };
+
   return (
-    <CrystalsContainer componentIsHovered={componentIsHovered}>
+    <CrystalsContainer>
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image1}
         alt="crystal 1"
         style={{
@@ -44,7 +42,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image2}
         alt="crystal 2"
         style={{
@@ -55,7 +52,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image3}
         alt="crystal 3"
         style={{
@@ -66,7 +62,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image4}
         alt="crystal 4"
         style={{
@@ -77,7 +72,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image5}
         alt="crystal 5"
         style={{
@@ -88,7 +82,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image6}
         alt="crystal 6"
         style={{
@@ -99,7 +92,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image7}
         alt="crystal 7"
         style={{
@@ -110,7 +102,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image8}
         alt="crystal 8"
         style={{
@@ -121,7 +112,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image9}
         alt="crystal 9"
         style={{
@@ -132,7 +122,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image10}
         alt="crystal 10"
         style={{
@@ -143,7 +132,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image11}
         alt="crystal 11"
         style={{
@@ -154,7 +142,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image12}
         alt="crystal 12"
         style={{
@@ -165,7 +152,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image13}
         alt="crystal 13"
         style={{
@@ -176,7 +162,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image14}
         alt="crystal 14"
         style={{
@@ -187,7 +172,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image15}
         alt="crystal 15"
         style={{
@@ -198,7 +182,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image16}
         alt="crystal 16"
         style={{
@@ -209,7 +192,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image17}
         alt="crystal 17"
         style={{
@@ -220,7 +202,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image18}
         alt="crystal 18"
         style={{
@@ -231,7 +212,6 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
       />
       <StyledImage
         changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
         src={Image19}
         alt="crystal 19"
         style={{
@@ -240,130 +220,22 @@ export const Crystals = ({ componentIsHovered }: CrystalsProps) => {
           bottom: "40%",
         }}
       />
-
-      {/* <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image1}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "5%",
-          bottom: "70%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image2}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "17%",
-          bottom: "60%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image3}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "25%",
-          bottom: "55%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image4}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "19%",
-          bottom: "40%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image5}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "15%",
-          bottom: "70%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image6}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "10%",
-          bottom: "50%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image10}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "5%",
-          bottom: "70%",
-        }}
-      />
-      <StyledImage
-        changeValue={ChangeValueGenerator()}
-        componentIsHovered={componentIsHovered}
-        src={image11}
-        alt="crystal"
-        style={{
-          position: "absolute",
-          right: "17%",
-          bottom: "60%",
-        }}
-      /> */}
     </CrystalsContainer>
   );
 };
 
+// Define a dynamic keyframes function
+const moveAnimation = (changeValue: number) => keyframes`
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(${changeValue}%, -50%); }
+  100% { transform: translate(0, 0); }
+  `;
+
 const StyledImage = styled(Image)<{
-  componentIsHovered: boolean;
   changeValue: number;
 }>`
-  ${(props) =>
-    props.componentIsHovered
-      ? css`
-          transition: all 0.6s ease;
-          transform: translate(${props.changeValue}%, -50%);
-        `
-      : css`
-          transition: all 0.6s ease;
-          transform: translate(0, 0);
-        `}
+  // Apply the dynamic animation
+  animation: ${(props) => moveAnimation(props.changeValue)} 5s infinite ease;
 `;
 
-const CrystalsContainer = styled("div")<{ componentIsHovered: boolean }>``;
-/* * {
-  transform: translate(0, 0);
-}
-${(props) =>
-  props.componentIsHovered
-    ? css`
-        * {
-          transition: all 0.6s ease;
-          transform: translate(-50%, -50%);
-        }
-      `
-    : css`
-        * {
-          transition: all 0.6s ease;
-          transform: translate(0, 0);
-        }
-      `} */
+const CrystalsContainer = styled("div")``;
