@@ -5,16 +5,103 @@ import {
   LineBreak,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
-import HeroLogo from "@/app/assets/Hero-Logo.png";
+import HeroLogo from "@/app/assets/Hero-Logo.svg";
 import Image from "next/image";
 import { TEXT_32_400, TEXT_64_900 } from "@/app/styles/global-typography";
 import { bigShoulder } from "@/app/utils/font-loader";
+import BLueAxeIcon from "../../assets/Axe-Blue.svg";
+import OrangeAxeIcon from "../../assets/Axe-Orange.svg";
+import BlueSquare from "@/app/assets/Blue-Rect.png";
+import OrangeSquare from "@/app/assets/Orange-Rect.png";
+import { keyframes } from "@mui/material";
+
+const ChangeValueGenerator = () => {
+  return Math.floor(Math.random() * 100) - 50;
+};
+
+const OrangeIconItems = [
+  {
+    bottom: 25,
+    right: 10,
+    rotation: 10,
+    size: 15,
+  },
+  {
+    bottom: 23,
+    right: 25,
+    rotation: 10,
+    size: 20,
+  },
+  {
+    bottom: 33,
+    right: 22,
+    rotation: 30,
+    size: 15,
+  },
+  {
+    bottom: 45,
+    right: 29,
+    rotation: 30,
+    size: 15,
+  },
+  {
+    bottom: 43,
+    right: 33,
+    rotation: 90,
+    size: 21,
+  },
+  {
+    bottom: 71,
+    right: 37,
+    rotation: 90,
+    size: 15,
+  },
+  {
+    bottom: 71,
+    right: 43,
+    rotation: 70,
+    size: 15,
+  },
+  {
+    bottom: 61,
+    right: 43,
+    rotation: 90,
+    size: 20,
+  },
+];
+
 export const Hero = () => {
   return (
     <HeroContainer>
       <ContentContainer>
         <HeroLogoWrapper>
-          <HeroLogoStyled src={HeroLogo} alt="Logo" />
+          <HeroLogoContainer>
+            {OrangeIconItems.map(({ bottom, right, size, rotation }, index) => (
+              <OrangeBulletStyled
+                key={index}
+                src={OrangeSquare}
+                rotation={rotation}
+                alt={"Image"}
+                bottom={bottom}
+                right={right}
+                size={size}
+              />
+            ))}
+            {OrangeIconItems.map(({ bottom, right, size, rotation }, index) => (
+              <BlueBulletStyled
+                key={index}
+                src={BlueSquare}
+                rotation={rotation}
+                alt={"Image"}
+                bottom={bottom}
+                left={right}
+                size={size}
+              />
+            ))}
+            <HeroLogoStyled src={HeroLogo} alt="Logo" />
+          </HeroLogoContainer>
+          {/* <OrangeAxeStyled src={OrangeAxeIcon} alt="Orange Axe" /> */}
+          {/* <BlueAxeStyled src={BLueAxeIcon} alt="Blue Axe" /> */}
           <CompanyNameWrapper>
             <CompanyName className={bigShoulder.className}>M</CompanyName>
             <BlueCharacter className={bigShoulder.className}>I</BlueCharacter>
@@ -36,6 +123,18 @@ export const Hero = () => {
     </HeroContainer>
   );
 };
+
+const moveAnimationBlue = () => keyframes`
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-200%, -200%); }
+  100% { transform: translate(0, 0); }
+  `;
+
+const moveAnimationOrange = () => keyframes`
+   0% { transform: translate(0, 0); }
+  50% { transform: translate(200%, -200%); }
+  100% { transform: translate(0, 0); }
+  `;
 
 const HeroContainer = styled("section")`
   background-image: url(${HeroBGImage.src});
@@ -68,10 +167,50 @@ const HeroLogoWrapper = styled("div")`
   margin-top: -100px;
 `;
 
+const HeroLogoContainer = styled("div")`
+  position: relative;
+`;
+
+const OrangeBulletStyled = styled(Image)<{
+  bottom: number;
+  right: number;
+  rotation: number;
+  size: number;
+}>`
+  position: absolute;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+  right: ${(props) => props.right}%;
+  bottom: ${(props) => props.bottom}%;
+  transform: rotate(${(props) => props.rotation}deg);
+  // Apply the dynamic animation
+  animation: ${moveAnimationOrange()} 5s infinite ease;
+`;
+const BlueBulletStyled = styled(Image)<{
+  bottom: number;
+  left: number;
+  rotation: number;
+  size: number;
+}>`
+  position: absolute;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+  left: ${(props) => props.left}%;
+  bottom: ${(props) => props.bottom}%;
+  transform: rotate(${(props) => props.rotation}deg);
+  // Apply the dynamic animation
+  animation: ${moveAnimationBlue()} 5s infinite ease;
+`;
 const HeroLogoStyled = styled(Image)`
   width: 445px;
   height: 272px;
+  position: relative;
+  z-index: 1;
 `;
+
+const BlueAxeStyled = styled(Image)``;
+
+const OrangeAxeStyled = styled(Image)``;
 
 const CompanyName = styled("h1")`
   ${TEXT_64_900}
