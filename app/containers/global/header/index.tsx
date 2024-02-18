@@ -56,11 +56,67 @@ const NavbarLogoWrapper = styled("div")`
   margin: 0 auto;
   padding: 20px;
   ${ROW_ALIGN_CENTER__SPACE_B};
-  /* background: rgba(254, 247, 255, 0.16); */
-  /* border-radius: 24px; */
 
-  background: rgba(254, 247, 255, 0.16);
-  backdrop-filter: blur(20px);
+  background: rgba(254, 247, 255, 0.24);
+  backdrop-filter: blur(120px);
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 24px;
+
+  /* border: 2px solid;
+
+  border-image: linear-gradient(
+    93.47deg,
+    #9d4edd 0%,
+    #5a189a 52.7%,
+    #10002b 112.04%
+  ); */
+  position: relative;
+  z-index: 1;
+  &::before {
+    /* content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    -webkit-mask: linear-gradient(
+        93.47deg,
+        #9d4edd 0%,
+        #5a189a 52.7%,
+        #10002b 112.04%
+      )
+      content-box;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    left: 0;
+    inset: 0;
+    z-index: -1; */
+    /* content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.25)
+    );
+    -webkit-mask: linear-gradient(
+          93.47deg,
+          #9d4edd 0%,
+          #5a189a 52.7%,
+          #10002b 112.04%
+        )
+        content-box,
+      linear-gradient(
+        0deg,
+        rgba(254, 247, 255, 0.24),
+        rgba(254, 247, 255, 0.24)
+      );
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1; */
+  }
 `;
