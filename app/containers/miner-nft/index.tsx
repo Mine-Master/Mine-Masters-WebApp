@@ -9,7 +9,6 @@ import MinerNftBg from "@/app/assets/Miner-Nft-Bg.png";
 import {
   TEXT_16_500,
   TEXT_24_400,
-  TEXT_48_400,
   TEXT_48_700,
   TEXT_48_900,
 } from "@/app/styles/global-typography";
@@ -17,10 +16,16 @@ import TokenLogo from "@/app/assets/Token-Logo.png";
 import Image from "next/image";
 import { bigShoulder } from "@/app/utils/font-loader";
 import { SecondaryButton } from "@/app/components/button/secondary";
+import { Crystals } from "./components/crystals";
+import { useState } from "react";
 
 export const MinerNft = () => {
+  const [componentIsHovered, setComponentIsHovered] = useState(false);
   return (
-    <MinerNftContainer>
+    <MinerNftContainer
+      onMouseEnter={() => setComponentIsHovered(true)}
+      onMouseLeave={() => setComponentIsHovered(false)}
+    >
       <div>
         <LeftSideWrapper>
           <Title>Purchase and deploy miner NFTs</Title>
@@ -42,6 +47,7 @@ export const MinerNft = () => {
           </TokenContainer>
         </LeftSideWrapper>
       </div>
+      <Crystals componentIsHovered={componentIsHovered} />
     </MinerNftContainer>
   );
 };
@@ -54,6 +60,7 @@ const MinerNftContainer = styled("section")`
   margin: auto;
   background: url(${MinerNftBg.src}) no-repeat;
   background-size: 100% 100%;
+  position: relative;
 `;
 
 const LeftSideWrapper = styled("div")`
