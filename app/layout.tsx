@@ -11,7 +11,37 @@ export const ubontu = Ubuntu({
 
 export const metadata: Metadata = {
   title: "MineMasters",
-  description: "MineMasters is a crypto game",
+  description:
+    "MineMasters: A strategic crypto game universe where players acquire lands, deploy NFT miners, and navigate between war and peace to build, battle, and prosper in a dynamic economy.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://minemasters.io/",
+    siteName: "MineMasters",
+    images: [
+      {
+        url: "/public/Social.png",
+        width: 1200,
+        height: 630,
+        alt: "MineMasters",
+      },
+    ],
+  },
+  twitter: {
+    site: "@MineMasters",
+    card: "summary_large_image",
+    title: "MineMasters",
+    description:
+      "MineMasters: A strategic crypto game universe where players acquire lands, deploy NFT miners, and navigate between war and peace to build, battle, and prosper in a dynamic economy.",
+    images: [
+      {
+        url: "/public/Social.png",
+        width: 1200,
+        height: 630,
+        alt: "MineMasters",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +57,8 @@ export default function RootLayout({
           maxWidth: "1728px",
           margin: "0 auto",
           position: "relative",
+          minWidth: "1320px",
+          overflowX: "scroll",
         }}
       >
         <Header />
