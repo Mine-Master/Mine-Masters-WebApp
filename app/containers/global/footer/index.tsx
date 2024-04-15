@@ -4,6 +4,7 @@ import Logo from "@/app/assets/Logo.svg";
 import Image from "next/image";
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
   ROW_ALIGN_START__JUSTIFY_END,
   ROW_ALIGN_START__JUSTIFY_START,
@@ -83,7 +84,7 @@ export const FooterMargin = () => {
 
 const FooterContainer = styled("footer")`
   width: 90%;
-  margin: auto;
+  ${MAX_WIDTH_RESPONSIVENESS}
   background: rgba(90, 24, 154, 0.1);
   backdrop-filter: blur(10px);
   /* Note: backdrop-filter has minimal browser support */

@@ -1,6 +1,7 @@
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
-  ROW_ALIGN_CENTER__JUSTIFY_START,
+  COLUMN_ALIGN_START__SPACE_B,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
 import {
@@ -45,7 +46,8 @@ export const News = () => {
 
 const NewsContainer = styled("section")`
   width: 90%;
-  ${COLUMN_ALIGN_START__JUSTIFY_START}
+  ${MAX_WIDTH_RESPONSIVENESS}
+  ${COLUMN_ALIGN_START__SPACE_B}
   gap:46px;
   margin: 0 auto 160px;
   ${mediaQueries.lessThan(`xl`)`
@@ -88,6 +90,7 @@ const SectionTitle = styled("h1")`
 
 const ItemsWrapper = styled("div")`
   ${ROW_ALIGN_START__JUSTIFY_START}
+  width: 100%;
   gap: 24px;
   ${mediaQueries.lessThan("sm")`
   width: 100%;

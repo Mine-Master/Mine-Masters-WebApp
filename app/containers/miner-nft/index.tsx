@@ -1,6 +1,7 @@
 import { PrimaryButton } from "@/app/components/button/primary";
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
   ROW_ALIGN_CENTER__SPACE_B,
 } from "@/app/styles/global-styles";
@@ -50,6 +51,7 @@ export const MinerNft = () => {
 
 const MinerNftContainer = styled("section")`
   width: 100%;
+  ${MAX_WIDTH_RESPONSIVENESS}
   padding-top: 120px;
   padding-bottom: 373px;
   ${ROW_ALIGN_CENTER__SPACE_B}
@@ -70,13 +72,14 @@ const MinerNftContainer = styled("section")`
   padding-top: 40px;
   padding-bottom: 220px;
   `}
+    ${mediaQueries.greaterThan("fhd")`
+    background-size: cover;
+  `}
 `;
 
 const LeftSideWrapper = styled("div")`
-  /* width: 50%; */
-  width: 90%;
-  margin-left: calc(5% + 50px);
   ${COLUMN_ALIGN_START__JUSTIFY_START}
+  margin-left: 50px;
   gap: 32px;
   ${mediaQueries.lessThan("md")`
   margin-left: 30px;
@@ -84,6 +87,10 @@ const LeftSideWrapper = styled("div")`
   `}
   ${mediaQueries.lessThan("sm")`
   gap: 8px;
+  `}
+    ${mediaQueries.lessThan("fhd")`
+   width: 90%;
+   margin-left: calc(5% + 50px);
   `}
 `;
 
