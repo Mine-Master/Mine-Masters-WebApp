@@ -58,8 +58,9 @@ export default function RootLayout({
           maxWidth: "1728px",
           margin: "0 auto",
           position: "relative",
-          minWidth: "1320px",
+          minWidth: "320px",
           overflowX: "scroll",
+          width: "100%",
         }}
       >
         <Header />

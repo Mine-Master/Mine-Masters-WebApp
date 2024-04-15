@@ -7,22 +7,101 @@ import { ROW_ALIGN_CENTER__SPACE_B } from "@/app/styles/global-styles";
 import { ConnectButton } from "@/app/components/button/connect";
 import useScrollingUp from "@/app/hooks/scroll";
 import { css } from "@emotion/react";
+import { mediaQueries } from "@/app/styles/mediaQueries";
+import { useState } from "react";
+import { Drawer, IconButton } from "@mui/material";
+import drag_handle from "@/app/assets/drag_handle.svg";
 
 export const Header = () => {
   const { scrollingUp, screenBegining } = useScrollingUp();
-  console.log(scrollingUp, screenBegining);
+  const [open, setOpen] = useState(false);
+
+  const handleDrawerOpenClose = () => {
+    setOpen((prev) => !prev);
+  };
 
   return (
-    <HeaderContainer scrollingUp={scrollingUp} screenBegining={screenBegining}>
-      <NavbarLogoWrapper>
-        <Image src={Logo} alt="Logo" />
-        <Navbar />
-        <ConnectButton />
-      </NavbarLogoWrapper>
-    </HeaderContainer>
+    <>
+      <HeaderContainer
+        scrollingUp={scrollingUp}
+        screenBegining={screenBegining}
+      >
+        <NavbarLogoWrapper>
+          <Image src={Logo} alt="Logo" />
+          <Navbar />
+          <ConnectButton />
+        </NavbarLogoWrapper>
+      </HeaderContainer>
+      <MobileHeader>
+        <IconButtonStyle onClick={handleDrawerOpenClose}>
+          <Image src={drag_handle} alt="Drag Handle" />
+        </IconButtonStyle>
+        <DrawerStyles anchor="left" open={open} onClose={() => setOpen(false)}>
+          <DrawerWrappe>
+            <ImageWrapper>
+              <Image src={Logo} alt="Logo" width={150} height={50} />
+            </ImageWrapper>
+            <Navbar />
+            <ConnectButtonStyle>
+              <ConnectButton />
+            </ConnectButtonStyle>
+          </DrawerWrappe>
+        </DrawerStyles>
+      </MobileHeader>
+    </>
   );
 };
 
+const DrawerStyles = styled(Drawer)`
+  display: none;
+  color: "var(--White)";
+  padding: "20px";
+  width: "275px";
+  height: "100vh";
+  z-index: 10000;
+  ${mediaQueries.lessThan("sm")`
+            display: block;
+  `}
+`;
+const ImageWrapper = styled("div")`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+const MobileHeader = styled("div")`
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 10000;
+  ${mediaQueries.lessThan("sm")`
+  display: block;
+  `}
+`;
+const IconButtonStyle = styled(IconButton)`
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  color: var(--White);
+  background: #10002b80;
+  img {
+    filter: brightness(0) invert(1);
+  }
+`;
+
+const DrawerWrappe = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: var(--Light-Purple);
+  color: var(--White);
+  height: 100%;
+  width: 100%;
+`;
 export const HeaderContainer = styled("header")<{
   scrollingUp: boolean;
   screenBegining: boolean;
@@ -49,15 +128,35 @@ export const HeaderContainer = styled("header")<{
           opacity: 1;
           transition: visibility 0.3s linear, opacity 0.3s linear;
         `}
+  ${mediaQueries.lessThan("lg")` 
+        max-width: 1200px;
+  `}
+  ${mediaQueries.lessThan("md")`
+    padding: 20px 0;
+ 
+  `}
+  ${mediaQueries.lessThan("sm")`
+  display: none;
+  `}
+`;
+
+const ConnectButtonStyle = styled("div")`
+  ${mediaQueries.lessThan("sm")`
+     .MuiButton-startIcon img {
+        filter: brightness(0) invert(1);
+       }
+      span {
+        color: white; 
+      }
+  `}
 `;
 
 const NavbarLogoWrapper = styled("div")`
-  width: 88%;
-  min-width: 1200px;
+  width: 92%;
   margin: 0 auto;
   padding: 20px;
   ${ROW_ALIGN_CENTER__SPACE_B};
-
+  overflow: hidden;
   background: rgba(254, 247, 255, 0.24);
   backdrop-filter: blur(120px);
   /* Note: backdrop-filter has minimal browser support */
@@ -120,4 +219,21 @@ const NavbarLogoWrapper = styled("div")`
     mask-composite: exclude;
     z-index: -1; */
   }
+  ${mediaQueries.lessThan("lg")`
+    padding: 15px;
+    & > img {
+      width: 61px;
+      height:70px
+}
+  `}
+  ${mediaQueries.lessThan("md")`
+      padding: 10px;
+      & > img {
+        width:41px;
+        height: 50px;
+  }
+  `}
+  ${mediaQueries.lessThan("sm")`
+      padding: 10px;
+  `}
 `;

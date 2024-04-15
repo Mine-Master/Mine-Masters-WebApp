@@ -8,6 +8,7 @@ import {
 import { Ubuntu } from "next/font/google";
 import { TEXT_24_400 } from "@/app/styles/global-typography";
 import { css } from "@emotion/react";
+import { mediaQueries } from "@/app/styles/mediaQueries";
 
 const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -56,6 +57,16 @@ export const PrimaryButtonStyled = styled(BaseButton)<PrimaryProps>`
       pointer-events: none;
       color: var(--Whitish);
       ${ROW_CENTER}
+      ${mediaQueries.lessThan("sm")`
+      padding: 12px 16px 12px 12px;
+      height: 48px;
+      font-size: 16px;
+      `}
+      ${mediaQueries.lessThan("xs")`
+      padding: 8px 12px 8px 8px;
+      height: 40px;
+      font-size: 14px;
+      `}
     `}
 
   // style disabled
@@ -70,5 +81,15 @@ export const PrimaryButtonStyled = styled(BaseButton)<PrimaryProps>`
       color: rgba(90, 24, 154, 0.5);
       border: none;
       box-shadow: none;
+    `}
+    ${mediaQueries.lessThan("sm")`
+    padding: 12px 16px 12px 12px;
+    height: 48px;
+    font-size: 16px;
+    `}
+    ${mediaQueries.lessThan("xs")`
+    padding: 8px 12px 8px 8px;
+    height: 40px;
+    font-size: 14px;
     `}
 `;

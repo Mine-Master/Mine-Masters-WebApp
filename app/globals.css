@@ -29,6 +29,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
   background-color: var(--Secondary);
+  padding-right: 0 !important;
 }
 
 ol,

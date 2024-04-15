@@ -14,6 +14,8 @@ import OrangeAxeIcon from "../../assets/Axe-Orange.svg";
 import BlueSquare from "@/app/assets/Blue-Rect.png";
 import OrangeSquare from "@/app/assets/Orange-Rect.png";
 import { keyframes } from "@mui/material";
+import { ConnectButton } from "@/app/components/button/connect";
+import { mediaQueries } from "@/app/styles/mediaQueries";
 
 const ChangeValueGenerator = () => {
   return Math.floor(Math.random() * 100) - 50;
@@ -119,6 +121,9 @@ export const Hero = () => {
           or
           <OrangeDescription> Engage in exhilarating wars</OrangeDescription>
         </HeroDescription>
+        <ConnectButtonStyle>
+          <ConnectButton />
+        </ConnectButtonStyle>
       </ContentContainer>
     </HeroContainer>
   );
@@ -143,6 +148,29 @@ const HeroContainer = styled("section")`
   width: 100%;
   height: 1100px;
   position: relative;
+  ${mediaQueries.lessThan("md")`
+    height: 1000px;
+  `}
+  ${mediaQueries.lessThan("sm")`
+    height: 800px;
+  `}
+  ${mediaQueries.lessThan("xs")`
+    height: 516px;
+    `}
+`;
+
+const ConnectButtonStyle = styled("div")`
+  display: none;
+  ${mediaQueries.lessThan("sm")`
+    display:block;
+    padding:14px;
+     .MuiButton-startIcon img {
+    filter: brightness(0) invert(1);
+  }
+  span {
+    color: white; /* Change text color to white */
+  }
+  `}
 `;
 
 const ContentContainer = styled("div")`
@@ -160,11 +188,32 @@ const ContentContainer = styled("div")`
   gap: 32px;
   padding-bottom: 58px;
   color: var(--Whitish);
+  ${mediaQueries.lessThan("md")`
+    padding-bottom: 48px;
+    gap: 24px;
+    `}
+  ${mediaQueries.lessThan("sm")`
+    padding-bottom: 32px;
+    gap: 16px;
+    `}
+    ${mediaQueries.lessThan("xs")`
+    padding-bottom: 16px;
+    gap: 8px;
+    `}
 `;
 
 const HeroLogoWrapper = styled("div")`
   ${COLUMN_ALIGN_CENTER___JUSTIFY_START}
   margin-top: -100px;
+  ${mediaQueries.lessThan("md")`
+    margin-top: -80px;
+    `}
+  ${mediaQueries.lessThan("sm")`
+    margin-top: -60px;
+    `}
+    ${mediaQueries.lessThan("xs")`
+    margin-top: -40px;
+    `}
 `;
 
 const HeroLogoContainer = styled("div")`
@@ -185,6 +234,10 @@ const OrangeBulletStyled = styled(Image)<{
   transform: rotate(${(props) => props.rotation}deg);
   // Apply the dynamic animation
   animation: ${moveAnimationOrange()} 5s infinite ease;
+  ${mediaQueries.lessThan("sm")`
+    width: 10px;
+    height: 10px;
+  `}
 `;
 const BlueBulletStyled = styled(Image)<{
   bottom: number;
@@ -200,12 +253,23 @@ const BlueBulletStyled = styled(Image)<{
   transform: rotate(${(props) => props.rotation}deg);
   // Apply the dynamic animation
   animation: ${moveAnimationBlue()} 5s infinite ease;
+  ${mediaQueries.lessThan("sm")`
+    width: 10px;
+    height: 10px;
+  `}
 `;
 const HeroLogoStyled = styled(Image)`
   width: 445px;
   height: 272px;
   position: relative;
   z-index: 1;
+  ${mediaQueries.lessThan("sm")`
+    width: 300px;
+    height: 184px;
+    `}
+  ${mediaQueries.lessThan("xs")`
+    width: 196px;
+    height: 106px;`}
 `;
 
 const BlueAxeStyled = styled(Image)``;
@@ -214,12 +278,33 @@ const OrangeAxeStyled = styled(Image)``;
 
 const CompanyName = styled("h1")`
   ${TEXT_64_900}
+  ${mediaQueries.lessThan("md")`
+    font-size: 56px;
+    `}
+  ${mediaQueries.lessThan("sm")`
+    font-size: 48px;
+    `}
+  ${mediaQueries.lessThan("xs")`
+    font-size: 32px;
+  `}
 `;
 
 const HeroDescription = styled("span")`
   ${TEXT_32_400}
   text-align: center;
   line-height: 37px;
+  ${mediaQueries.lessThan("md")`
+    font-size: 28px;
+    line-height: 32px;
+    `}
+  ${mediaQueries.lessThan("sm")`
+    font-size: 24px;
+    line-height: 28px;
+    `}
+  ${mediaQueries.lessThan("xs")`
+    font-size: 14px;
+    line-height: 18px;
+    `}
 `;
 
 const BlueDescription = styled(HeroDescription)`
@@ -233,11 +318,29 @@ const OrangeDescription = styled(HeroDescription)`
 const BlueCharacter = styled("h1")`
   color: var(--Pastal-Blue);
   ${TEXT_64_900}
+  ${mediaQueries.lessThan("md")`
+    font-size: 56px;
+    `}
+  ${mediaQueries.lessThan("sm")`
+    font-size: 48px;
+    `}
+  ${mediaQueries.lessThan("xs")`
+    font-size: 32px;
+  `}
 `;
 
 const OrangeCharacter = styled("h1")`
   color: var(--Orange);
   ${TEXT_64_900}
+  ${mediaQueries.lessThan("md")`
+    font-size: 56px;
+    `}
+  ${mediaQueries.lessThan("sm")`
+    font-size: 48px;
+    `}
+  ${mediaQueries.lessThan("xs")`
+    font-size: 32px;
+  `}
 `;
 
 const CompanyNameWrapper = styled("div")`
