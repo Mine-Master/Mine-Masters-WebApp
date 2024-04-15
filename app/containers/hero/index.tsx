@@ -162,9 +162,17 @@ const HeroContainer = styled("section")`
 const ConnectButtonStyle = styled("div")`
   display: none;
   ${mediaQueries.lessThan("sm")`
-    display:block
+    display:block;
+    padding:14px;
+     .MuiButton-startIcon img {
+    filter: brightness(0) invert(1);
+  }
+  span {
+    color: white; /* Change text color to white */
+  }
   `}
 `;
+
 const ContentContainer = styled("div")`
   position: absolute;
   bottom: 10%;

@@ -8,25 +8,17 @@ import { ConnectButton } from "@/app/components/button/connect";
 import useScrollingUp from "@/app/hooks/scroll";
 import { css } from "@emotion/react";
 import { mediaQueries } from "@/app/styles/mediaQueries";
-import { useEffect, useState } from "react";
-import { Drawer, IconButton, useMediaQuery } from "@mui/material";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+import { useState } from "react";
+import { Drawer, IconButton } from "@mui/material";
+import drag_handle from "@/app/assets/drag_handle.svg";
 
 export const Header = () => {
   const { scrollingUp, screenBegining } = useScrollingUp();
   const [open, setOpen] = useState(false);
 
-  // const isSmScreen = useMediaQuery(mediaQueries.lessThan("sm"));
-
   const handleDrawerOpenClose = () => {
     setOpen((prev) => !prev);
   };
-
-  // useEffect(() => {
-  //   if (!isSmScreen) {
-  //     setOpen(false);
-  //   }
-  // }, [isSmScreen]);
 
   return (
     <>
@@ -36,36 +28,23 @@ export const Header = () => {
       >
         <NavbarLogoWrapper>
           <Image src={Logo} alt="Logo" />
-
           <Navbar />
           <ConnectButton />
         </NavbarLogoWrapper>
       </HeaderContainer>
       <MobileHeader>
         <IconButtonStyle onClick={handleDrawerOpenClose}>
-          <DragHandleIcon />
+          <Image src={drag_handle} alt="Drag Handle" />
         </IconButtonStyle>
-        <DrawerStyles
-          anchor="left"
-          open={open}
-          onClose={() => setOpen(false)}
-          sx={
-            {
-              // display: { sm: "block", md: "none" },
-              // color: "var(--White)",
-              // padding: "20px",
-              // width: "275px",
-              // height: "100vh",
-              // zIndex: 10000,
-            }
-          }
-        >
+        <DrawerStyles anchor="left" open={open} onClose={() => setOpen(false)}>
           <DrawerWrappe>
             <ImageWrapper>
               <Image src={Logo} alt="Logo" width={150} height={50} />
             </ImageWrapper>
             <Navbar />
-            <ConnectButton />
+            <ConnectButtonStyle>
+              <ConnectButton />
+            </ConnectButtonStyle>
           </DrawerWrappe>
         </DrawerStyles>
       </MobileHeader>
@@ -108,6 +87,9 @@ const IconButtonStyle = styled(IconButton)`
   border-radius: 8px;
   color: var(--White);
   background: #10002b80;
+  img {
+    filter: brightness(0) invert(1);
+  }
 `;
 
 const DrawerWrappe = styled("div")`
@@ -146,16 +128,26 @@ export const HeaderContainer = styled("header")<{
           opacity: 1;
           transition: visibility 0.3s linear, opacity 0.3s linear;
         `}
-  ${mediaQueries.lessThan("lg")`
-        
+  ${mediaQueries.lessThan("lg")` 
         max-width: 1200px;
-        `}
+  `}
   ${mediaQueries.lessThan("md")`
-  padding: 20px 0;
-  // max-width: 992px;
-        `}
+    padding: 20px 0;
+ 
+  `}
   ${mediaQueries.lessThan("sm")`
   display: none;
+  `}
+`;
+
+const ConnectButtonStyle = styled("div")`
+  ${mediaQueries.lessThan("sm")`
+     .MuiButton-startIcon img {
+        filter: brightness(0) invert(1);
+       }
+      span {
+        color: white; 
+      }
   `}
 `;
 
@@ -228,23 +220,20 @@ const NavbarLogoWrapper = styled("div")`
     z-index: -1; */
   }
   ${mediaQueries.lessThan("lg")`
-//  max-width: 1200px;
- padding: 15px;
- & > img {
-  width: 61px;
-  height:70px
+    padding: 15px;
+    & > img {
+      width: 61px;
+      height:70px
 }
   `}
   ${mediaQueries.lessThan("md")`
-// max-width: 992px;
-  padding: 10px;
-  & > img {
-    width:41px;
-    height: 50px;
+      padding: 10px;
+      & > img {
+        width:41px;
+        height: 50px;
   }
   `}
   ${mediaQueries.lessThan("sm")`
-  // max-width: 768px;
-  padding: 10px;
+      padding: 10px;
   `}
 `;

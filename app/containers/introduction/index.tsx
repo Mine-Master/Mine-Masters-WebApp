@@ -16,11 +16,11 @@ export const Introduction = () => {
           <SmallerText>Dive into the thrilling realm of</SmallerText>
           <Title> MineMasters Introduction</Title>
         </TwoLineTitleWrapper>
-        <SmallerText>
+        <SmallerTextDesc>
           Our game empowers you, promoting financial inclusivity and showcasing
           limitless innovation in the digital world. It provides immersive
           gameplay coupled with real-world value generation.
-        </SmallerText>
+        </SmallerTextDesc>
         <OrangeSquareStyled src={OrangeSquare} alt="Orange Square" />
         <BlueSquareStyled src={BlueSquare} alt="Blue Square" />
         <IntroLeftBgStyled src={IntroLeftBg} alt="Intro Left Bg" />
@@ -79,21 +79,34 @@ const SmallerText = styled("h2")`
   font-size: 20px;
   `}
   ${mediaQueries.lessThan("xs")`
-  font-size: 14px;
+  font-size: 16px;
   `}
 `;
 
+const SmallerTextDesc = styled("h2")`
+  ${TEXT_32_400}
+  z-index: 1;
+  ${mediaQueries.lessThan("md")`
+  font-size: 22px;
+  `}
+  ${mediaQueries.lessThan("sm")`
+  font-size: 18px;
+  `}
+  ${mediaQueries.lessThan("xs")`
+  font-size: 14px;
+  `}
+`;
 const Title = styled("h1")`
   ${TEXT_48_700}
   z-index: 1;
   ${mediaQueries.lessThan("md")`
-  font-size: 36px;
+  font-size: 40px;
   `}
   ${mediaQueries.lessThan("sm")`
-  font-size: 28px;
+  font-size: 32px;
   `}
   ${mediaQueries.lessThan("xs")`
-  font-size: 20px;
+  font-size: 24px;
   `}
 `;
 
@@ -123,7 +136,7 @@ const BlueSquareStyled = styled(Image)`
   width: 57px;
   height: 57px;
   left: -10px;
-  top:-10px
+  top:-15px
   `}
 `;
 const OrangeSquareStyled = styled(Image)`
