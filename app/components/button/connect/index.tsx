@@ -42,7 +42,7 @@ export const ConnectButton = ({
         />
       }
       className={ubontu.className}
-      loading={loading ? loading : false}
+      loading={loading ? loading : undefined}
       disabled={disabled}
       {...props}
     >
@@ -51,7 +51,7 @@ export const ConnectButton = ({
   );
 };
 
-const ConnectButtonStyled = styled(PrimaryButton)<{ loading: boolean }>`
+const ConnectButtonStyled = styled(PrimaryButton)<{ loading?: boolean }>`
   gap: 8px;
   ${TEXT_24_400}
   width: 268px;
