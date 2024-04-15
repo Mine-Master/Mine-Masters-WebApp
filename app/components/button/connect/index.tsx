@@ -9,6 +9,7 @@ import { useState } from "react";
 import { css } from "@emotion/react";
 import LoadingIcon from "@/app/assets/Loading.svg";
 import { ROW_CENTER } from "@/app/styles/global-styles";
+import { mediaQueries } from "@/app/styles/mediaQueries";
 
 const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -45,7 +46,7 @@ export const ConnectButton = ({
       disabled={disabled}
       {...props}
     >
-      {loading ? "Loading..." : "Connect Wallet"}
+      <span>{loading ? "Loading..." : "Connect Wallet"}</span>
     </ConnectButtonStyled>
   );
 };
@@ -53,6 +54,40 @@ export const ConnectButton = ({
 const ConnectButtonStyled = styled(PrimaryButton)<{ loading: boolean }>`
   gap: 8px;
   ${TEXT_24_400}
-  min-width: 268px;
+  width: 268px;
   padding: 14px 24px 14px 16px;
+  overflow: hidden;
+  ${mediaQueries.lessThan("lg")`
+    width: 200px;
+    height: 50px;
+    padding: 5px 10px;
+    align-items: center;
+    & > span {
+      font-size: 18px;
+    }
+    `}
+  ${mediaQueries.lessThan("md")`
+    min-width: 150px;
+    padding:5px 10px ;
+    .MuiButton-startIcon {
+    margin-right: 0;
+    }
+    `}
+   @media (max-width: 866px) {
+    min-width: 100px;
+    justify-content: center;
+    & > span {
+      font-size: 14px;
+    }
+    .MuiButton-startIcon {
+    }
+  }
+  ${mediaQueries.lessThan("sm")`
+    padding: 10px 12px;
+    & > span {
+      font-size: 18px;
+    }
+    .MuiButton-startIcon {
+    } 
+    `}
 `;
