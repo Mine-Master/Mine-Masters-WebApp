@@ -55,7 +55,7 @@ export default function RootLayout({
       <body
         className={`${ubontu.className}`}
         style={{
-          maxWidth: "1728px",
+          // maxWidth: "1728px",
           margin: "0 auto",
           position: "relative",
           minWidth: "320px",

@@ -109,7 +109,6 @@ export const HeaderContainer = styled("header")<{
   /* position: absolute; */
   position: fixed;
   top: 0;
-  max-width: 1728px;
   margin: 0 auto;
   /* background: rgba(254, 247, 255, 0.16); */
   /* backdrop-filter: blur(13.8px); */
@@ -137,6 +136,10 @@ export const HeaderContainer = styled("header")<{
   `}
   ${mediaQueries.lessThan("sm")`
   display: none;
+  `}
+    ${mediaQueries.greaterThan("fhd")`
+    width: 1920px;
+    left: calc(calc(100% - 1920px) / 2)
   `}
 `;
 

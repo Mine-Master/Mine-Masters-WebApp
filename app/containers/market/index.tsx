@@ -4,6 +4,7 @@ import {
   COLUMN_ALIGN_CENTER__JUSTIFY_END,
   COLUMN_ALIGN_CENTER___JUSTIFY_START,
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
   ROW_ALIGN_CENTER__SPACE_B,
   ROW_ALIGN_END__SPACE_B,
@@ -58,6 +59,7 @@ export const Marketplace = () => {
 
 const MarketplaceContainer = styled("section")`
   width: 100%;
+  ${MAX_WIDTH_RESPONSIVENESS}
   height: 1100px;
   position: relative;
   ${COLUMN_ALIGN_CENTER___JUSTIFY_START}
@@ -73,7 +75,7 @@ const MarketplaceContainer = styled("section")`
 `;
 
 const BackgroundImageContainer = styled("div")`
-  width: 90%;
+  width: 100%;
   margin: auto;
   background-image: url(${MarketplaceBGImage.src});
   background-size: cover;

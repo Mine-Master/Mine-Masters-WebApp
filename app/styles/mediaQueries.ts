@@ -5,6 +5,8 @@ export const breakpoints = {
   lg: 1200,
   xl: 1400,
   xxl: 1550,
+  fhd: 1920,
+  bsc: 2100,
 };
 
 export const mediaQueries = {
