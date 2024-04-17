@@ -138,6 +138,7 @@ const ItemTitle = styled("h2")`
 const ItemDescription = styled("p")`
   ${TEXT_24_400}
   color: rgba(90, 24, 154, 0.5);
+  line-height: 33.6px;
   ${mediaQueries.lessThan("xl")`
   font-size: 28px;
   `}
@@ -152,6 +153,7 @@ const ItemDescription = styled("p")`
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;
+  line-height:16.09px;
   `}
 `;
 

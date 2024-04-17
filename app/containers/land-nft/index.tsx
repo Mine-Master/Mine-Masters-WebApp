@@ -110,6 +110,7 @@ const Description = styled("p")`
   color: var(--Dark-Purple);
   ${TEXT_24_400}
   padding-right: 20px;
+  line-height: 33.6px;
   ${mediaQueries.lessThan("md")`
   font-size: 20px;
   `}
@@ -118,6 +119,7 @@ const Description = styled("p")`
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;
+  line-height:16.09px;
   `}
 `;
 
