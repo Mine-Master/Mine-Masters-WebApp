@@ -18,7 +18,6 @@ import { Divider } from "@mui/material";
 export const News = () => {
   return (
     <NewsContainer>
-      <HorizontalDivider orientation="horizontal" flexItem />
       <SectionTitle>News & Events</SectionTitle>
       <ItemsWrapper>
         <NewsItem>
@@ -61,7 +60,7 @@ const NewsContainer = styled("section")`
     margin-bottom: 80px;
   `}
   ${mediaQueries.lessThan(`sm`)`
-    gap: 12px;
+    gap: 32px;
     margin-bottom: 60px;
   `}
 `;
@@ -98,7 +97,7 @@ const ItemsWrapper = styled("div")`
 
 const NewsItem = styled("div")`
   ${COLUMN_ALIGN_START__JUSTIFY_START}
-  gap:16px;
+  /* gap:16px; */
   // set width to the half of the full width minus 16px
   width: calc(50% - 8px);
   ${mediaQueries.lessThan("md")`
@@ -125,6 +124,8 @@ const ItemTitle = styled("h2")`
   `}
   ${mediaQueries.lessThan("sm")`
   font-size: 16px;
+  margin-top:16px;
+  margin-bottom:8px;
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;

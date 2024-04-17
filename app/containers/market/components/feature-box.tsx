@@ -34,14 +34,13 @@ const FeatureBoxContainer = styled("div")`
   padding: 14px;
   `}
   ${mediaQueries.lessThan("sm")`
-  margin-top: 24px;
+  margin-top: 0px;
   width: 200px;
   height: 50px;
   padding: 12px;
  
   `}
   ${mediaQueries.lessThan("xs")`
-  margin-top: 16px;
   width: 148px;
   height: 40px;
   padding: 8px;

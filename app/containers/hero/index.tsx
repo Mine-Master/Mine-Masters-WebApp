@@ -122,7 +122,7 @@ export const Hero = () => {
           <OrangeDescription> Engage in exhilarating wars</OrangeDescription>
         </HeroDescription>
         <ConnectButtonStyle>
-          <ConnectButton />
+          <ConnectButton customStyles={true} />
         </ConnectButtonStyle>
       </ContentContainer>
     </HeroContainer>
@@ -161,6 +161,7 @@ const HeroContainer = styled("section")`
 
 const ConnectButtonStyle = styled("div")`
   display: none;
+  z-index: 1;
   ${mediaQueries.lessThan("sm")`
     display:block;
     padding:14px;
@@ -168,7 +169,7 @@ const ConnectButtonStyle = styled("div")`
     filter: brightness(0) invert(1);
   }
   span {
-    color: white; /* Change text color to white */
+    color: white;
   }
   `}
 `;

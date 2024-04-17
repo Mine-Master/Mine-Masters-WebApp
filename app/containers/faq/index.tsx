@@ -99,10 +99,12 @@ const FaqItem = styled("div")<{ selected: boolean }>`
   ${mediaQueries.lessThan(`md`)`
     gap: 16px;
     padding: 16px;
+    border-radius:16px;
   `}
   ${mediaQueries.lessThan(`sm`)`
     gap: 12px;
     padding: 12px;
+     border-radius:8px;
   `}
 `;
 
