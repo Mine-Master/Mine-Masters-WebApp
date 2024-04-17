@@ -3,6 +3,7 @@ import HeroBGImage from "@/app/assets/Hero.png";
 import {
   COLUMN_ALIGN_CENTER___JUSTIFY_START,
   LineBreak,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
 import HeroLogo from "@/app/assets/Hero-Logo.svg";
@@ -175,6 +176,7 @@ const ConnectButtonStyle = styled("div")`
 `;
 
 const ContentContainer = styled("div")`
+  ${MAX_WIDTH_RESPONSIVENESS}
   position: absolute;
   bottom: 10%;
   left: 5%;
@@ -183,7 +185,6 @@ const ContentContainer = styled("div")`
   background: rgba(90, 24, 154, 0.1);
   box-shadow: 0px 8px 100px 30px rgba(16, 0, 43, 0.5);
   backdrop-filter: blur(10px);
-  /* Note: backdrop-filter has minimal browser support */
   border-radius: 32px;
   ${COLUMN_ALIGN_CENTER___JUSTIFY_START}
   gap: 32px;
@@ -200,6 +201,9 @@ const ContentContainer = styled("div")`
     ${mediaQueries.lessThan("xs")`
     padding-bottom: 16px;
     gap: 8px;
+    `}
+        ${mediaQueries.greaterThan("bsc")`
+    left: calc(calc(100% - 1920px) / 2);
     `}
 `;
 

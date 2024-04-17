@@ -3,6 +3,7 @@ import {
   BottomPosition,
   COLUMN_ALIGN_START__JUSTIFY_START,
   LeftPosition,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__SPACE_B,
   RightPosition,
   TopPosition,
@@ -46,6 +47,7 @@ export const LandNft = () => {
 
 const LandNftContainer = styled("section")`
   width: 90%;
+  ${MAX_WIDTH_RESPONSIVENESS}
   ${ROW_ALIGN_CENTER__SPACE_B}
   margin: auto;
   ${mediaQueries.lessThan("md")`

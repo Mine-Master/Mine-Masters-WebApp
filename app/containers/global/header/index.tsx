@@ -217,7 +217,6 @@ export const HeaderContainer = styled("header")<{
 }>`
   position: fixed;
   top: 0;
-  max-width: 1728px;
   margin: 0 auto;
   width: 100%;
   padding: 30px 0;
@@ -243,6 +242,10 @@ export const HeaderContainer = styled("header")<{
   `}
   ${mediaQueries.lessThan("sm")`
   display: none;
+  `}
+    ${mediaQueries.greaterThan("fhd")`
+    width: 1920px;
+    left: calc(calc(100% - 1920px) / 2)
   `}
 `;
 

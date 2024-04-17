@@ -3,6 +3,7 @@ import { PrimaryButton } from "@/app/components/button/primary";
 import {
   COLUMN_ALIGN_CENTER___JUSTIFY_START,
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
 } from "@/app/styles/global-styles";
 import {
@@ -51,9 +52,10 @@ const StartMineMastersContainer = styled("section")`
   ${mediaQueries.lessThan(`sm`)`
    padding-top:37px;
 `};
+
+  ${MAX_WIDTH_RESPONSIVENESS}
 `;
 const StartMineMastersContent = styled("div")`
-  width: 90%;
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
   gap:32px;
   margin: auto;
@@ -75,6 +77,9 @@ const StartMineMastersContent = styled("div")`
     ${mediaQueries.lessThan("xs")`
     padding: 8px;
     gap: 8px;
+    `}
+    ${mediaQueries.lessThan("fhd")`
+    width: 90%;
     `}
 `;
 

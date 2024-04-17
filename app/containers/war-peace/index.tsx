@@ -1,6 +1,7 @@
 import { PrimaryButton } from "@/app/components/button/primary";
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__SPACE_B,
 } from "@/app/styles/global-styles";
 import styled from "@emotion/styled";
@@ -51,6 +52,7 @@ export const WarPeace = () => {
 
 const WarPeaceContainer = styled("section")`
   width: 90%;
+  ${MAX_WIDTH_RESPONSIVENESS}
   ${ROW_ALIGN_CENTER__SPACE_B}
   margin: 121px auto;
   gap: 70px;

@@ -19,110 +19,118 @@ import Image16 from "../../../assets/miner-nft/Vector (6).png";
 import Image17 from "../../../assets/miner-nft/Group 18.png";
 import Image18 from "../../../assets/miner-nft/Vector (7).png";
 import Image19 from "../../../assets/miner-nft/Group 20.png";
-import Image20 from "../../../assets/miner-nft/Vector (4).png";
 import { mediaQueries } from "@/app/styles/mediaQueries";
+import { splitmix32 } from "@/app/utils/random-number-generator";
 
 interface CrystalsProps {}
 
 export const Crystals = ({}: CrystalsProps) => {
-  const ChangeValueGenerator = () => {
-    return Math.floor(Math.random() * 100) - 50;
+  let changeValuesObject: any = {};
+
+  // Define a function that generates a random value between -50 and 50
+  const ChangeValueGenerator = (input: number) => {
+    // const changeValue = Math.floor(Math.random() * 100) - 50;
+    const changeValue = Math.floor(splitmix32(input) * 100) - 50;
+    changeValuesObject[input] = changeValue;
   };
+  for (let i = 0; i < 40; i++) {
+    ChangeValueGenerator(i);
+  }
 
   return (
     <CrystalsContainer>
       <StyledImageOne
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[0]}
         src={Image1}
         alt="crystal 1"
       />
       <StyledImageTwo
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[1]}
         src={Image2}
         alt="crystal 2"
       />
       <StyledImageThree
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[2]}
         src={Image3}
         alt="crystal 3"
       />
       <StyledImageFour
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[3]}
         src={Image4}
         alt="crystal 4"
       />
       <StyledImageFive
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[4]}
         src={Image5}
         alt="crystal 5"
       />
       <StyledImageSix
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[5]}
         src={Image6}
         alt="crystal 6"
       />
       <StyledImageSeven
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[6]}
         src={Image7}
         alt="crystal 7"
       />
       <StyledImageEight
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[7]}
         src={Image8}
         alt="crystal 8"
       />
       <StyledImageNine
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[8]}
         src={Image9}
         alt="crystal 9"
       />
       <StyledImageTen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[9]}
         src={Image10}
         alt="crystal 10"
       />
       <StyledImageEleven
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[10]}
         src={Image11}
         alt="crystal 11"
       />
       <StyledImageTwelve
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[11]}
         src={Image12}
         alt="crystal 12"
       />
       <StyledImageThirteen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[12]}
         src={Image13}
         alt="crystal 13"
       />
       <StyledImageFourteen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[13]}
         src={Image14}
         alt="crystal 14"
       />
       <StyledImageFifteen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[14]}
         src={Image15}
         alt="crystal 15"
       />
       <StyledImageSixteen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[15]}
         src={Image16}
         alt="crystal 16"
       />
       <StyledImageSeventeen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[16]}
         src={Image17}
         alt="crystal 17"
       />
       <StyledImageEighteen
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[17]}
         src={Image18}
         alt="crystal 18"
       />
       <StyledImageLast
-        changeValue={ChangeValueGenerator()}
+        changevalue={changeValuesObject[18]}
         src={Image19}
         alt="crystal 19"
       />
@@ -138,10 +146,10 @@ const moveAnimation = (changeValue: number) => keyframes`
   `;
 
 const StyledImage = styled(Image)<{
-  changeValue: number;
+  changevalue: number;
 }>`
   // Apply the dynamic animation
-  animation: ${(props) => moveAnimation(props.changeValue)} 5s infinite ease;
+  animation: ${(props) => moveAnimation(props.changevalue)} 5s infinite ease;
 `;
 
 const CrystalsContainer = styled("div")``;

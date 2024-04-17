@@ -44,7 +44,7 @@ export const ConnectButton = ({
         />
       }
       className={ubontu.className}
-      loading={loading ? loading : false}
+      loading={loading ? loading : undefined}
       disabled={disabled}
       customStyles={customStyles}
       {...props}

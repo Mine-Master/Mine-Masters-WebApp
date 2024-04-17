@@ -1,5 +1,6 @@
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
@@ -51,7 +52,7 @@ const FaqContainer = styled("section")`
   ${COLUMN_ALIGN_START__JUSTIFY_START}
   gap:48px;
   width: 90%;
-  margin: auto;
+  ${MAX_WIDTH_RESPONSIVENESS}
   margin-bottom: 120px;
   ${mediaQueries.lessThan(`lg`)`
     gap: 36px;
