@@ -44,7 +44,7 @@ export const ConnectButton = ({
         />
       }
       className={ubontu.className}
-      loading={loading ? loading : false}
+      loading={loading ? loading : undefined}
       disabled={disabled}
       customStyles={customStyles}
       {...props}
@@ -54,8 +54,10 @@ export const ConnectButton = ({
   );
 };
 
-const ConnectButtonStyled = styled(PrimaryButton)<{
-  loading: boolean;
+const ConnectButtonStyled = styled(PrimaryButton, {
+  shouldForwardProp: (prop) => !["customStyles", "loading"].includes(prop),
+})<{
+  loading?: boolean;
   customStyles?: boolean;
 }>`
   gap: 8px;
