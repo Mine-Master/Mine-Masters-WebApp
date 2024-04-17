@@ -83,9 +83,11 @@ const LeftSideWrapper = styled("div")`
   ${COLUMN_ALIGN_START__JUSTIFY_START}
   margin-left: 50px;
   gap: 32px;
+  padding-left: 50px;
   ${mediaQueries.lessThan("md")`
   margin-left: 30px;
   gap: 16px;
+  padding-left:0;
   `}
   ${mediaQueries.lessThan("sm")`
   margin-left:24px;
@@ -138,6 +140,7 @@ const Description = styled("p")`
   max-width: 667px;
   margin-top: 16px;
   padding-right: 20px;
+  line-height: 33.6px;
   ${mediaQueries.lessThan("md")`
   font-size: 20px;
   margin-top: 8px;
@@ -148,6 +151,7 @@ const Description = styled("p")`
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;
+  line-height:16.09px;
   `}
 `;
 

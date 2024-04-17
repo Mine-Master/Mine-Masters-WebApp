@@ -161,6 +161,7 @@ const RightSideTitle = styled("h1")`
 const RightSideDescription = styled("p")`
   ${TEXT_24_400}
   color: var(--Dark-Purple);
+  line-height: 33.6px;
   ${mediaQueries.lessThan("md")`
   font-size: 20px;
   `}
@@ -168,6 +169,7 @@ const RightSideDescription = styled("p")`
   font-size: 16px;
   `}
   ${mediaQueries.lessThan("xs")`
+  line-height:16.09px;
   font-size: 14px;
   `}
 `;
