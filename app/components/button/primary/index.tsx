@@ -57,6 +57,9 @@ export const PrimaryButtonStyled = styled(BaseButton)<PrimaryProps>`
       pointer-events: none;
       color: var(--Whitish);
       ${ROW_CENTER}
+      ${mediaQueries.lessThan(`md`)`
+    height:55px;
+    `}
       ${mediaQueries.lessThan("sm")`
       padding: 12px 16px 12px 12px;
       height: 48px;
@@ -81,6 +84,9 @@ export const PrimaryButtonStyled = styled(BaseButton)<PrimaryProps>`
       color: rgba(90, 24, 154, 0.5);
       border: none;
       box-shadow: none;
+    `}
+    ${mediaQueries.lessThan(`md`)`
+      height:55px;
     `}
     ${mediaQueries.lessThan("sm")`
     padding: 12px 16px 12px 12px;

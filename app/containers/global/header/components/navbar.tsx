@@ -25,9 +25,6 @@ const NavbarContainer = styled("nav")`
     flex-direction: column;
     align-items: flex-start;
   `}
-  ${mediaQueries.lessThan("xs")`
-  
-  `}
 `;
 
 const NavbarItem = styled(SecondaryButton)`
@@ -43,7 +40,7 @@ const NavbarItem = styled(SecondaryButton)`
     `}
      @media (max-width: 866px) {
     padding: 6px;
-    font-size: 16px;
+    font-size: 14px;
   }
   ${mediaQueries.lessThan("sm")`
     font-size: 14px;

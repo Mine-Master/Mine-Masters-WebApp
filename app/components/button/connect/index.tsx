@@ -79,6 +79,7 @@ const ConnectButtonStyled = styled(PrimaryButton)<{
       font-size: 18px;
     }
     `}
+  
   ${mediaQueries.lessThan("md")`
     padding:5px 10px ;
     .MuiButton-startIcon {

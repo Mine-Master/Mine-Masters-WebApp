@@ -119,6 +119,9 @@ const DrawerStyles = styled(Drawer)`
     ${mediaQueries.lessThan("sm")`
       display: block;
   `}
+    ${mediaQueries.greaterThan(`sm`)`
+  display: none;
+  `}
     animation: ${(props) =>
       props.open ? "slideUp" : "slideDown"} 0.5s ease forwards;
     ${({ open }) =>
@@ -171,10 +174,10 @@ const ImageWrapper = styled("div")`
   }
 `;
 const MobileHeader = styled("div")`
-  display: none;
-  position: relative;
-  ${mediaQueries.lessThan("sm")`
   display: block;
+  position: relative;
+  ${mediaQueries.greaterThan(`sm`)`
+  display: none;
   `}
 `;
 const IconButtonStyle = styled(IconButton)`
@@ -198,8 +201,12 @@ const IconButtonStyle = styled(IconButton)`
 const DrawerWrappe = styled("div")`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   padding: 20px;
-  background: #5a189a80;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 100px 30px rgba(16, 0, 43, 0.5);
+  border: 1px solid;
+  border-image: linear-gradient(to right, #9d4edd, #10002b);
   color: var(--White);
   height: 100%;
   width: 100%;
@@ -320,6 +327,7 @@ const NavbarLogoWrapper = styled("div")`
     mask-composite: exclude;
     z-index: -1; */
   }
+
   ${mediaQueries.lessThan("lg")`
     padding: 15px;
     & > img {

@@ -42,4 +42,7 @@ const NavbarItem = styled(SecondaryButton)`
     }
 
     `}
+  &:hover {
+    color: #c77dff;
+  }
 `;
