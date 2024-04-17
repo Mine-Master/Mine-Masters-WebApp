@@ -165,3 +165,8 @@ export const BottomPosition = css`
   top: calc(100% - 500px);
   right: calc(50% - 190px);
 `;
+
+export const MAX_WIDTH_RESPONSIVENESS = css`
+  max-width: 1920px;
+  margin: auto;
+`;

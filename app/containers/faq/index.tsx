@@ -1,5 +1,6 @@
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
+  MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
@@ -10,6 +11,7 @@ import { FAQ_ITEMS } from "./constant";
 import FaqItemLogo from "@/app/assets/Faq-Item-Logo.png";
 import { useState } from "react";
 import { css } from "@emotion/react";
+import { mediaQueries } from "@/app/styles/mediaQueries";
 
 export const Faq = () => {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
@@ -50,13 +52,40 @@ const FaqContainer = styled("section")`
   ${COLUMN_ALIGN_START__JUSTIFY_START}
   gap:48px;
   width: 90%;
-  margin: auto;
+  ${MAX_WIDTH_RESPONSIVENESS}
   margin-bottom: 120px;
+  ${mediaQueries.lessThan(`lg`)`
+    gap: 36px;
+    margin-bottom: 100px;
+  `}
+  ${mediaQueries.lessThan(`md`)`
+    gap: 16px;
+    margin-bottom: 80px;
+  `}
+  ${mediaQueries.lessThan(`sm`)`
+    gap: 12px;
+    margin-bottom: 60px;
+  `}
 `;
 
 const SectionTitle = styled("h1")`
   ${TEXT_48_700}
   color: var(--Primary);
+  ${mediaQueries.lessThan("xl")`
+    font-size: 40px;
+  `}
+  ${mediaQueries.lessThan("lg")`
+    font-size: 34px;
+  `}
+  ${mediaQueries.lessThan("md")`
+    font-size: 24px;
+  `}
+  ${mediaQueries.lessThan("sm")`
+    font-size: 20px;
+  `}
+  ${mediaQueries.lessThan("xs")`
+    font-size: 16px;
+  `}
 `;
 
 const FaqItem = styled("div")<{ selected: boolean }>`
@@ -68,12 +97,33 @@ const FaqItem = styled("div")<{ selected: boolean }>`
   letter-spacing: 0.05em;
   padding: 24px;
   cursor: pointer;
+  ${mediaQueries.lessThan(`md`)`
+    gap: 16px;
+    padding: 16px;
+    border-radius:16px;
+  `}
+  ${mediaQueries.lessThan(`sm`)`
+    gap: 12px;
+    padding: 12px;
+     border-radius:8px;
+  `}
 `;
 
 const ItemTextWrapper = styled("div")`
   ${COLUMN_ALIGN_START__JUSTIFY_START}
   gap:42px;
   margin-top: 10px;
+  ${mediaQueries.lessThan(`md`)`
+    gap: 32px;
+  `}
+  ${mediaQueries.lessThan(`sm`)`
+    gap: 24px;
+    margin-top: 5px;
+  `}
+  ${mediaQueries.lessThan(`xs`)`
+    gap: 16px;
+    margin-top: 0;
+  `}
 `;
 
 const ItemTitle = styled("h2")<{ selected: boolean }>`
@@ -84,6 +134,15 @@ const ItemTitle = styled("h2")<{ selected: boolean }>`
     css`
       color: var(--Blackish);
     `}
+  ${mediaQueries.lessThan(`md`)`
+    font-size: 20px;
+  `}
+  ${mediaQueries.lessThan(`sm`)`
+    font-size: 16px;
+  `}
+  ${mediaQueries.lessThan(`xs`)`
+    font-size: 14px;
+  `}
 `;
 
 const ItemDescription = styled("p")<{ selected: boolean }>`
@@ -97,6 +156,15 @@ const ItemDescription = styled("p")<{ selected: boolean }>`
 
   color: var(--Black);
   ${TEXT_24_400}
+  ${mediaQueries.lessThan(`md`)`
+    font-size: 20px;
+  `}
+  ${mediaQueries.lessThan(`sm`)`
+    font-size: 16px;
+  `}
+  ${mediaQueries.lessThan(`xs`)`
+    font-size: 14px;
+  `}
 `;
 
 const ItemLogo = styled(Image)<{ selected: boolean }>`
@@ -105,5 +173,17 @@ const ItemLogo = styled(Image)<{ selected: boolean }>`
     selected &&
     css`
       rotate: 180deg;
+    `}
+  ${mediaQueries.lessThan(`md`)`
+    width: 40px;
+    height: 40px;
+    `}
+  ${mediaQueries.lessThan(`sm`)`
+    width: 32px;
+    height: 32px;
+    `}
+  ${mediaQueries.lessThan(`xs`)`
+    width: 24px;
+    height: 24px;
     `}
 `;
