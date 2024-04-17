@@ -43,7 +43,12 @@ export const Footer = () => {
             <LeftSideBottomTitle>Masters</LeftSideBottomTitle>
           </TitleWrapper>
           <LeftSideSubTitle>Accessible, Engaging, Rewarding</LeftSideSubTitle>
-          <ConnectButton />
+          <ConnectButtonStyleMd>
+            <ConnectButton />
+          </ConnectButtonStyleMd>
+          <ConnectButtonStyle>
+            <ConnectButton customStyles={true} />
+          </ConnectButtonStyle>
         </LeftSideContent>
       </LeftSideWrapper>
       <RightSideWrapper>
@@ -123,6 +128,9 @@ const LeftSideContent = styled("div")`
   ${mediaQueries.lessThan("md")`
     align-items: center;
   `}
+  ${mediaQueries.lessThan(`sm`)`
+    gap:0;
+  `}
 `;
 
 const LeftSideTopTitle = styled("h3")`
@@ -175,6 +183,8 @@ const LeftSideSubTitle = styled("h4")`
   }
   ${mediaQueries.lessThan("sm")`
    text-align: center;
+   white-space: nowrap;
+   margin-bottom:24px;
     `}
 `;
 
@@ -190,6 +200,7 @@ padding-left: 0;
   `}
   ${mediaQueries.lessThan(`md`)`
     padding-left: 20px;
+    justify-content: center;
   `}
   ${mediaQueries.lessThan("sm")`
     width: 100%;
@@ -271,6 +282,10 @@ const StyledLogo = styled(Image)`
 
 const ItemWrapper = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
+  margin-bottom: 16px;
+  ${mediaQueries.lessThan("sm")`
+   margin-bottom:0;
+   `}
 `;
 const ItemList = styled(SecondaryButton)`
   padding: 16px;
@@ -332,8 +347,30 @@ justify-content: space-between;
 `;
 
 const CommunityIcon = styled(Image)`
+  ${mediaQueries.lessThan("md")`
+
+ `}
   ${mediaQueries.lessThan("sm")`
   width: 35px;
   height: 35px;
+`}
+`;
+
+const ConnectButtonStyleMd = styled("div")`
+  ${mediaQueries.lessThan("sm")`
+  display: none;
+`}
+`;
+const ConnectButtonStyle = styled("div")`
+  display: none;
+  ${mediaQueries.lessThan("sm")`
+  display: block;
+   padding:14px;
+     .MuiButton-startIcon img {
+    filter: brightness(0) invert(1);
+  }
+  span {
+    color: white; 
+  }
 `}
 `;

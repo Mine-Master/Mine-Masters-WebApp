@@ -78,6 +78,8 @@ const MinerNftContainer = styled("section")`
 `;
 
 const LeftSideWrapper = styled("div")`
+  width: 90%;
+  margin-left: calc(5% + 50px);
   ${COLUMN_ALIGN_START__JUSTIFY_START}
   margin-left: 50px;
   gap: 32px;
@@ -86,11 +88,11 @@ const LeftSideWrapper = styled("div")`
   gap: 16px;
   `}
   ${mediaQueries.lessThan("sm")`
+  margin-left:24px;
   gap: 8px;
   `}
-    ${mediaQueries.lessThan("fhd")`
-   width: 90%;
-   margin-left: calc(5% + 50px);
+    ${mediaQueries.lessThan("xs")`
+  margin-left:16px;
   `}
 `;
 
@@ -115,6 +117,7 @@ const Title = styled("h1")`
   `}
   ${mediaQueries.lessThan("sm")`
   font-size: 32px;
+  line-height: 48px;
   &::before {
     font-size: 32px;
     left: -32px;
@@ -137,9 +140,11 @@ const Description = styled("p")`
   padding-right: 20px;
   ${mediaQueries.lessThan("md")`
   font-size: 20px;
+  margin-top: 8px;
   `}
   ${mediaQueries.lessThan("sm")`
   font-size: 16px;
+  margin-top: 4px;
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;
@@ -163,11 +168,20 @@ const TokenContainer = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
   margin-top: 28px;
   gap: 8px;
+  ${mediaQueries.lessThan("md")`
+  padding: 0 94px 0 0;
+  border-radius: 16px;
+  `}
   ${mediaQueries.lessThan("sm")`
   padding: 0 64px 0 0;
+  border-radius: 12px;
+  
   `}
   ${mediaQueries.lessThan("xs")`
+  position:absolute;
   padding: 0 32px 0 0;
+  border-radius: 8px;
+  bottom: 120px;
   `}
 `;
 
@@ -218,6 +232,7 @@ const ComingSoonButton = styled(PrimaryButton)`
   padding: 16px 56px;
   ${mediaQueries.lessThan("sm")`
   padding: 12px 48px;
+  border-radius: 8px;
   `}
   ${mediaQueries.lessThan("xs")`
   padding: 8px 32px;

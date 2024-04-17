@@ -17,23 +17,38 @@ export const GameMechanics = () => {
 const GameMechanicsContainer = styled("section")`
   background-image: url(${GameMechanismsBg.src});
   background-size: cover;
+  ${mediaQueries.lessThan(`lg`)`
+  background-repeat: no-repeat;
+  background-position: center;
+  height:325px;
+   `}
+  ${mediaQueries.lessThan(`md`)`
+  height:290px;
+    `}
+  ${mediaQueries.lessThan(`sm`)`
+    height: 160px;
+ `}
+  ${mediaQueries.lessThan(`xs`)`
+    height: 109px;
+    margin-bottom: 23px;
+  `}
 `;
 
 const GameMechanicsContent = styled("div")`
   ${COLUMN_ALIGN_CENTER___JUSTIFY_START};
   padding-top: 193px;
   padding-bottom: 114px;
+  ${mediaQueries.lessThan(`lg`)`
+  padding-top:130px;
+   `}
   ${mediaQueries.lessThan("md")`
-    padding-top: 144px;
-    padding-bottom: 80px;
+    padding-top: 110px;
   `}
   ${mediaQueries.lessThan("sm")`
-    padding-top: 96px;
-    padding-bottom: 56px;
+    padding-top: 110px;
   `}
   ${mediaQueries.lessThan("xs")`
-    padding-top: 48px;
-    padding-bottom: 32px;
+    padding-top: 83px;
     `}
 `;
 

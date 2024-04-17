@@ -63,12 +63,17 @@ const LeftSideWrapper = styled("div")`
   ${mediaQueries.lessThan("md")`
   width: 100%;
   margin-left: 30px;
+  gap: 16px;
+  `}
+  ${mediaQueries.lessThan(`sm`)`
+    gap:8px;
   `}
 `;
 
 const Title = styled("h1")`
   color: var(--Primary);
   ${TEXT_48_700}
+  line-height:55.15px;
   position: relative;
   &::before {
     position: absolute;
@@ -86,6 +91,7 @@ const Title = styled("h1")`
   `}
   ${mediaQueries.lessThan("sm")`
   font-size: 32px;
+  line-height: 48px;
   &::before {
     font-size: 32px;
     left: -32px;
@@ -131,6 +137,7 @@ const ComingSoonButton = styled(PrimaryButton)`
   padding: 16px 56px;
   ${mediaQueries.lessThan("sm")`
   padding: 12px 48px;
+  border-radius: 8px;
   `}
   ${mediaQueries.lessThan("xs")`
   padding: 8px 32px;
@@ -154,20 +161,20 @@ const LearnMoreButton = styled(SecondaryButton)`
 
 const BackgroundCircle = styled(Image)`
   ${mediaQueries.lessThan("lg")`
-  width:900px;
-  height:930px;
+  width:910px;
+  height:910px;
   `}
   ${mediaQueries.lessThan("md")`
-  width:800px;
-  height:830px;
+  width:610px;
+  height:610px;
   `}
   ${mediaQueries.lessThan("sm")`
-  width:600px;
-  height:630px;
+  width:430px;
+  height:430px;
   `}
   ${mediaQueries.lessThan("xs")`
   width:313px;
-  height:295px;
+  height:313px;
   `}
 `;
 
@@ -249,83 +256,83 @@ const TopPicStyled = styled("img")`
   }
   `}
   ${mediaQueries.lessThan("md")`
-  width: 380px;
-  height: 270px;
+  width: 250px;
+  height: 235px;
    @keyframes rotateImageTop {
     0%,
     15% {
       /* Initial position */  
-       top: 40px;
-      right: calc(50% - 180px);
+       top: 0px;
+      right: calc(50% - 125px);
     }
     20%,
     35% {
       /* Move to next position */
       
-      right: -20px;
-      top: calc(50% - 175px);
+      right: -10px;
+      top: calc(50% - 155px);
     }
     40%,
     55% {
-       top: calc(100% - 380px);
-      right: calc(50% - 190px);
+       top: calc(100% - 320px);
+      right: calc(50% - 125px);
     }
     60%,
     75% {
-      top: calc(50% - 190px);
-       right: calc(100% - 320px);
+      top: calc(50% - 170px);
+       right: calc(100% - 260px);
     }
     80%,
     95% {
       /* Back to initial position */
-     top: 40px;
-      right: calc(50% - 180px);
+     top: 0px;
+      right: calc(50% - 125px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-     top: 40px;
-      right: calc(50% - 180px);
+     top: 0px;
+      right: calc(50% - 125px);
     }
   }
   `}
   ${mediaQueries.lessThan("sm")`
-  width: 250px;
-  height: 220px;
+  width: 200px;
+  height: 185px;
   @keyframes rotateImageTop {
     0%,
     15% {
       /* Initial position */  
-       top: 40px;
-      right: calc(50% - 120px);
+       top: 0px;
+      right: calc(50% - 100px);
     }
     20%,
     35% {
       /* Move to next position */ 
-      right: -10px;
-      top: calc(50% - 125px);
+      right: -20px;
+      top: calc(50% - 115px);
     }
     40%,
     55% {
-       top: calc(100% - 310px);
-      right: calc(50% - 120px);
+       top: calc(100% - 230px);
+      right: calc(50% - 95px);
     }
     60%,
     75% {
-      top: calc(50% - 130px);
-       right: calc(100% - 230px);
+      top: calc(50% - 100px);
+       right: calc(100% - 170px);
     }
     80%,
     95% {
       /* Back to initial position */
-      top: 40px;
-      right: calc(50% - 120px);
+      top: 0px;
+      right: calc(50% - 100px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-       top: 40px;
-      right: calc(50% - 120px);
+       top: 0px;
+      right: calc(50% - 100px);
     }
   }
   `}
@@ -449,87 +456,87 @@ const LeftPicStyled = styled(Image)`
    
   `}
   ${mediaQueries.lessThan("md")`
-  width: 380px;
-  height: 270px;
+  width: 250px;
+  height: 235px;
    @keyframes rotateImageLeft {
     0%,
     15% {
       /* Initial position */  
-       top: calc(50% - 190px);
-       right: calc(100% - 320px);
+       top: calc(50% - 155px);
+       right: calc(100% - 240px);
       
     }
     20%,
     35% {
       /* Move to next position */
-       top: 40px;
-      right: calc(50% - 180px);
+       top: 0px;
+      right: calc(50% - 130px);
      
     }
     40%,
     55% {
        right: -20px;
-      top: calc(50% - 195px);
+       top: calc(50% - 180px);
     }
     60%,
     75% {
       
-      top: calc(100% - 380px);
-     right: calc(50% - 190px);
+      top: calc(100% - 330px);
+     right: calc(50% - 130px);
     }
     80%,
     95% {
       /* Back to initial position */
-      top: calc(50% - 190px);
-       right: calc(100% - 320px);
+      top: calc(50% - 155px);
+       right: calc(100% - 240px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-     top: calc(50% - 190px);
-       right: calc(100% - 320px);
+     top: calc(50% - 155px);
+       right: calc(100% - 240px);
     }
   }
   `}
   ${mediaQueries.lessThan("sm")`
-  width: 250px;
-  height: 220px;
+  width: 190px;
+  height: 180px;
    @keyframes rotateImageLeft {
     0%,
     15% {
       /* Initial position */  
-       top: calc(50% - 150px);
-       right: calc(100% - 230px);
+       top: calc(50% - 120px);
+       right: calc(100% - 170px);
     }
     20%,
     35% {
       /* Move to next position */ 
-        top: 30px;
-      right: calc(50% - 130px);
+        top: 0px;
+      right: calc(50% - 100px);
     
     }
     40%,
     55% {
-        right: -10px;
-      top: calc(50% - 150px);
+        right: -20px;
+      top: calc(50% - 120px);
       
     }
     60%,
     75% {
-      top: calc(100% - 310px);
-      right: calc(50% - 130px);
+      top: calc(100% - 220px);
+      right: calc(50% - 105px);
     }
     80%,
     95% {
       /* Back to initial position */
-       top: calc(50% - 150px);
-       right: calc(100% - 230px);
+       top: calc(50% - 120px);
+       right: calc(100% - 170px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-      top: calc(50% - 150px);
-       right: calc(100% - 230px);
+        top: calc(50% - 120px);
+        right: calc(100% - 170px);
     }
   }
   `}
@@ -653,90 +660,90 @@ const RightPicStyled = styled(Image)`
   }
   `}
   ${mediaQueries.lessThan("md")`
-  width: 380px;
-  height: 270px;
+  width: 250px;
+  height: 230px;
    @keyframes rotateImageRight {
     0%,
     15% {
       /* Initial position */  
         right: -20px;
-      top: calc(50% - 175px);
+      top: calc(50% - 110px);
     }
     20%,
     35% {
       /* Move to next position */
       
-      top: calc(100% - 380px);
-     right: calc(50% - 190px);
+      top: calc(100% - 290px);
+     right: calc(50% - 130px);
     
     }
     40%,
     55% {
-      top: calc(50% - 150px);
-       right: calc(100% - 320px);
+      top: calc(50% - 120px);
+       right: calc(100% - 250px);
     }
     60%,
     75% {
       top: 40px;
-       right: calc(50% - 180px);
+       right: calc(50% - 120px);
     }
     80%,
     95% {
       /* Back to initial position */
           right: -20px;
-      top: calc(50% - 175px);
+      top: calc(50% - 110px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
         right: -20px;
-      top: calc(50% - 175px);
+      top: calc(50% - 110px);
     }
   }
   `}
   ${mediaQueries.lessThan("sm")`
-  width: 250px;
-  height: 220px;
+  width: 200px;
+  height: 180px;
   @keyframes rotateImageRight {
     0%,
     15% {
       /* Initial position */  
-      right: -10px;
-      top: calc(50% - 125px);
+      right: -20px;
+      top: calc(50% - 90px);
     }
     20%,
     35% {
       /* Move to next position */ 
-      top: calc(100% - 290px);
-     right: calc(50% - 120px);
+      top: calc(100% - 210px);
+     right: calc(50% - 100px);
     }
     40%,
     55% {
-      top: calc(50% - 115px);
-       right: calc(100% - 250px);
+      top: calc(50% - 80px);
+       right: calc(100% - 190px);
     }
     60%,
     75% {
-      top: 70px;
-      right: calc(50% - 120px);
+      top: 0px;
+      right: calc(50% - 100px);
     }
     80%,
     95% {
       /* Back to initial position */
-       right: -10px;
-      top: calc(50% - 125px);
+       right: -20px;
+      top: calc(50% - 90px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-      right: -10px;
-      top: calc(50% - 125px);
+      right: -20px;
+      top: calc(50% - 90px);
     }
   }
   `}
   ${mediaQueries.lessThan("xs")`
   width: 150px;
-  height: 110px;
+  height: 118px;
   @keyframes rotateImageRight {
     0%,
     15% {
@@ -854,25 +861,25 @@ const BottomPicStyled = styled(Image)`
   }
   `}
   ${mediaQueries.lessThan("md")`
-  width: 380px;
-  height: 270px;
+  width: 250px;
+  height: 230px;
     @keyframes rotateImageBottom {
     0%,
     15% {
       /* Initial position */  
-      top: calc(100% - 380px);
-     right: calc(50% - 190px);
+      top: calc(100% - 300px);
+     right: calc(50% - 140px);
     }
     20%,
     35% {
       /* Move to next position */
       top: calc(50% - 150px);
-       right: calc(100% - 320px);
+       right: calc(100% - 270px);
     }
     40%,
     55% {
-      top: 40px;
-       right: calc(50% - 180px);
+      top: 0px;
+       right: calc(50% - 140px);
     }
     60%,
     75% {
@@ -882,94 +889,94 @@ const BottomPicStyled = styled(Image)`
     80%,
     95% {
       /* Back to initial position */
-       top: calc(100% - 380px);
-     right: calc(50% - 190px);
+       top: calc(100% - 300px);
+     right: calc(50% - 140px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-       top: calc(100% - 380px);
-     right: calc(50% - 190px);
+       top: calc(100% - 300px);
+     right: calc(50% - 140px);
     }
   }
   `}
   ${mediaQueries.lessThan("sm")`
-  width: 250px;
-  height: 220px;
+  width: 200px;
+  height: 185px;
    @keyframes rotateImageBottom {
     0%,
     15% {
       /* Initial position */  
-      top: calc(100% - 290px);
-     right: calc(50% - 120px);
+      top: calc(100% - 220px);
+     right: calc(50% - 105px);
     }
     20%,
     35% {
       /* Move to next position */ 
       top: calc(50% - 115px);
-       right: calc(100% - 250px);
+       right: calc(100% - 190px);
     }
     40%,
     55% {
-      top: 55px;
-      right: calc(50% - 140px);
+      top: 0px;
+      right: calc(50% - 110px);
     }
     60%,
     75% {
-      right: -10px;
+      right: -20px;
      top: calc(50% - 125px);
     }
     80%,
     95% {
       /* Back to initial position */
-      top: calc(100% - 290px);
-     right: calc(50% - 120px);
+      top: calc(100% - 220px);
+     right: calc(50% - 105px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
-      top: calc(100% - 290px);
-     right: calc(50% - 120px);
+      top: calc(100% - 220px);
+     right: calc(50% - 105px);
     }
   }
   `}
   ${mediaQueries.lessThan("xs")`
-  width: 150px;
-  height: 110px;
+  width: 128px;
+  height: 144px;
    @keyframes rotateImageBottom {
     0%,
     15% {
       /* Initial position */  
       top: calc(100% - 150px);
-     right: calc(50% - 80px);
+     right: calc(50% - 60px);
     }
     20%,
     35% {
       /* Move to next position */ 
-      top: calc(50% - 70px);
-       right: calc(100% - 140px);
+       top: calc(50% - 90px);
+       right: calc(100% - 130px);
     }
     40%,
     55% {
-      top: 10px;
-      right: calc(50% - 80px);
+      top: 0px;
+      right: calc(50% - 70px);
     }
     60%,
     75% {
-      right: -20px;
-     top: calc(50% - 80px);
+     right: -20px;
+     top: calc(50% - 90px);
     }
     80%,
     95% {
       /* Back to initial position */
       top: calc(100% - 150px);
-     right: calc(50% - 80px);
+     right: calc(50% - 60px);
     }
     100% {
       /* Ensure it ends in the initial position */
       /* Back to initial position */
        top: calc(100% - 150px);
-     right: calc(50% - 80px);
+     right: calc(50% - 60px);
     }
   }
   `}

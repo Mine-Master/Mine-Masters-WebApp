@@ -3,7 +3,6 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Header } from "./containers/global/header";
 import { Footer, FooterMargin } from "./containers/global/footer";
-import Head from "next/head";
 
 const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -52,6 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+      </head>
       <body
         className={`${ubontu.className}`}
         style={{
