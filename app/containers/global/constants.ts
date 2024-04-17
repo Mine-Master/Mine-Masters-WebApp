@@ -27,6 +27,37 @@ export const NAVBAR_ITEMS = [
   },
 ];
 
+export const MOBILE_MENU_ITEMS = [
+  {
+    title: "Game Mechanism",
+    href: "/",
+  },
+  {
+    title: "Marketplace",
+    href: "/Marketplace",
+  },
+  {
+    title: "Communities",
+    href: "/Communities",
+  },
+  {
+    title: "Events",
+    href: "/Events",
+  },
+  {
+    title: "FAQ",
+    href: "/FAQ",
+  },
+  {
+    title: "Terms of Use",
+    href: "/Terms of Use",
+  },
+  {
+    title: "Privacy Policy",
+    href: "/Privacy Policy",
+  },
+];
+
 export const FOOTER_MENU_ITEMS = [
   {
     title: "Game Mechanism",

@@ -23,7 +23,12 @@ export const StartMineMasters = () => {
       <StartMineMastersContent>
         <LeftSideWrapper>
           <LeftSideTitle className={bigShoulder.className}>Start</LeftSideTitle>
-          <ConnectButton />
+          <ConnectButtonStyle>
+            <ConnectButton />
+          </ConnectButtonStyle>
+          <ConnectButtonWrapper>
+            <ConnectButton customStyles={true} />
+          </ConnectButtonWrapper>
         </LeftSideWrapper>
         <VerticalDivider orientation="vertical" flexItem />
         <HorizontalDivider orientation="horizontal" flexItem />
@@ -44,9 +49,12 @@ export const StartMineMasters = () => {
 };
 
 const StartMineMastersContainer = styled("section")`
+  ${mediaQueries.lessThan(`sm`)`
+   padding-top:37px;
+`};
+
   ${MAX_WIDTH_RESPONSIVENESS}
 `;
-
 const StartMineMastersContent = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
   gap:32px;
@@ -58,10 +66,12 @@ const StartMineMastersContent = styled("div")`
   ${mediaQueries.lessThan("md")`
     padding: 24px;
     gap: 24px;
+    border-radius: 24px;
     `}
   ${mediaQueries.lessThan("sm")`
     padding: 16px;
     gap: 16px;
+    border-radius: 16px;
     flex-direction:column-reverse;
     `}
     ${mediaQueries.lessThan("xs")`
@@ -79,10 +89,13 @@ const LeftSideWrapper = styled("div")`
   margin-right: 40px;
   ${mediaQueries.lessThan("md")`
     margin-right: 0;
+    padding: 0 16px;
     `}
   ${mediaQueries.lessThan("sm")`
+    width: 100%;
     flex-direction:row;
-    gap:32px;
+    gap:16px;
+    justify-content:space-between;
     `}
     ${mediaQueries.lessThan("xs")`
     gap: 8px;
@@ -157,4 +170,22 @@ const RightSideDescription = styled("p")`
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;
   `}
+`;
+
+const ConnectButtonStyle = styled("div")`
+  ${mediaQueries.lessThan("sm")`
+      display:none;
+      `}
+`;
+const ConnectButtonWrapper = styled("div")`
+  display: none;
+  ${mediaQueries.lessThan("sm")`
+        display:block;
+           .MuiButton-startIcon img {
+        filter: brightness(0) invert(1);
+      }
+      span {
+        color: white; /* Change text color to white */
+      }
+      `}
 `;

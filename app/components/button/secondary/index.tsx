@@ -8,6 +8,7 @@ import {
 import { Ubuntu } from "next/font/google";
 import { TEXT_24_400 } from "@/app/styles/global-typography";
 import { css } from "@emotion/react";
+import { mediaQueries } from "@/app/styles/mediaQueries";
 
 const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -69,4 +70,13 @@ export const SecondaryButtonStyled = styled(BaseButton)<SecondaryProps>`
       border: none;
       box-shadow: none;
     `}
+    ${mediaQueries.lessThan(`md`)`
+    height:50px;
+    `}
+     @media (max-width: 866px) {
+    justify-content: center;
+  }
+  ${mediaQueries.lessThan(`sm`)`
+    justify-content: space-between;
+  `}
 `;

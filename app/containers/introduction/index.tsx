@@ -33,7 +33,7 @@ export const Introduction = () => {
 const IntroductionContainer = styled("section")`
   background-color: var(--Purple);
   ${mediaQueries.lessThan("xs")`
-  height:275px;
+  // height:275px;
   `}
 `;
 
@@ -59,14 +59,15 @@ const IntroductionContent = styled("div")`
     gap: 16px;
   `}
   ${mediaQueries.lessThan("xs")`
-    padding-top: 32px;
-    padding-bottom: 32px;
-    gap: 8px;
+    padding-top: 37px;
+    padding-bottom: 37px;
   `}
 `;
 
 const TwoLineTitleWrapper = styled("div")`
-  z-index: 1;
+  ${mediaQueries.lessThan("xs")`
+  line-height: 18.38px; 
+   `}
 `;
 
 const SmallerText = styled("h2")`
@@ -94,6 +95,7 @@ const SmallerTextDesc = styled("h2")`
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 14px;
+  line-height:16.09px;
   `}
 `;
 const Title = styled("h1")`
@@ -104,6 +106,7 @@ const Title = styled("h1")`
   `}
   ${mediaQueries.lessThan("sm")`
   font-size: 32px;
+  line-height: 27.58px;
   `}
   ${mediaQueries.lessThan("xs")`
   font-size: 24px;
@@ -127,10 +130,10 @@ const BlueSquareStyled = styled(Image)`
   top:-80px
   `}
   ${mediaQueries.lessThan("sm")`
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   left: -20px;
-  top:-50px
+  top:-65px
   `}
   ${mediaQueries.lessThan("xs")`
   width: 57px;
@@ -156,14 +159,17 @@ const OrangeSquareStyled = styled(Image)`
   top:70px
   `}
   ${mediaQueries.lessThan("sm")`
-  width: 100px;
-  height: 100px;
-  right: -30px;
+  width: 120px;
+  height: 120px;
+  right: 0px;
+  top: 30px;
   `}
   ${mediaQueries.lessThan("xs")`
   width: 50px;
   height: 50px;
-  right: -10px;
+  right: 5px;
+  top:20px;
+  
   `}
 `;
 
@@ -171,13 +177,46 @@ const IntroLeftBgStyled = styled(Image)`
   position: absolute;
   top: 0;
   left: -200px;
+  ${mediaQueries.lessThan("md")`
+    width: 380px;
+    height: 215px;
+    left: -60px;
+    top: -50px;
+  `}
+  ${mediaQueries.lessThan("sm")`
+    width: 430px;
+    height: 165px;
+    left:-100px;
+  `}
+  ${mediaQueries.lessThan(`xs`)`
+    width: 145px;
+    height: 75px;
+    left: -35px;
+    top: -22px;
+  `}
 `;
 
 const IntroRightBgStyled = styled(Image)`
   position: absolute;
   bottom: 104px;
   right: -447px;
-  ${mediaQueries.lessThan("sm")`
-  display:none;
+  ${mediaQueries.lessThan("md")`
+  width: 350px;
+  height: 170px;
+  right: -127px;
+  top: -50px;
   `}
+
+  ${mediaQueries.lessThan("sm")`
+  width: 180px;
+  height: 100px;
+  right: -20px;
+    top: -40px;
+  `}
+  ${mediaQueries.lessThan("xs")`
+  width: 150px;
+    height: 56px;
+    right: -45px;
+    top: -25px;
+    `}
 `;

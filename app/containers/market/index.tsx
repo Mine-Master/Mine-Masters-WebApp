@@ -103,7 +103,6 @@ const ContentContainer = styled("div")`
   gap: 32px;
   padding: 60px;
   color: var(--Whitish);
-
   background: rgba(254, 247, 255, 0.16);
   border: 3px solid #c77dff;
   backdrop-filter: blur(50px);
@@ -114,22 +113,26 @@ const ContentContainer = styled("div")`
     gap: 28px;
     position: relative;
     top: 50px;
+    border-radius: 32px;
+    backdrop-filter: blur(40px);
   `}
   ${mediaQueries.lessThan("md")`
-  justify-content: space-around;
+  justify-content: space-between;
     gap: 24px;
     top: 260px;
+    border-radius: 24px;
   `}
   ${mediaQueries.lessThan("sm")`
   height: 350px;
     padding: 30px;
-    gap: 15px;
+    gap: 16px;
     top: 190px;
+    border-radius: 16px;
   `}
   ${mediaQueries.lessThan("xs")`
   height:315px;
-    padding: 15px;
-    gap: 10px;
+    padding: 16px;
+    gap: 8px;
     top: 115px;
   
   `}
@@ -192,8 +195,9 @@ const RocksLogoStyled = styled(Image)`
     z-index: -1;
   `}
   ${mediaQueries.lessThan("xs")`
-      margin-top: 170px;
-    height: 200px;
+      margin-top: 150px;
+      height: 109px;
+      width:578px;
   `}
 `;
 
@@ -234,6 +238,7 @@ const TwoLeftButtons = styled("div")`
   `}
   ${mediaQueries.lessThan("sm")`
   gap: 12px;
+  margin-top:19px;
   `}
   ${mediaQueries.lessThan("xs")`
   gap: 8px;
@@ -241,6 +246,8 @@ const TwoLeftButtons = styled("div")`
 `;
 
 const FeatureBoxStyled = styled(FeatureBox)`
+  background: rgba(254, 247, 255, 0.16);
+  backdrop-filter: blur(50px);
   img {
     top: -40px;
     ${mediaQueries.lessThan("sm")`
@@ -248,6 +255,7 @@ const FeatureBoxStyled = styled(FeatureBox)`
    `}
     ${mediaQueries.lessThan("xs")`
    top: -10px;
+   margin-top:8px ;
    `}
   }
 `;
@@ -255,8 +263,9 @@ const FeatureBoxStyled = styled(FeatureBox)`
 const StyledPrimaryButton = styled(PrimaryButton)`
   padding: 16px 56px;
   ${mediaQueries.lessThan("sm")`
-display: none;
+  display: none;
   padding: 12px 48px;
+  border-radius: 8px;
   `}
   ${mediaQueries.lessThan("xs")`
   padding: 8px 32px;
@@ -268,6 +277,7 @@ const StyledPrimaryButtonSmall = styled(PrimaryButton)`
   ${mediaQueries.lessThan("sm")`
   display: block;
   padding: 12px 48px;
+  border-radius: 8px;
   `}
   ${mediaQueries.lessThan("xs")`
   padding: 8px 32px;
