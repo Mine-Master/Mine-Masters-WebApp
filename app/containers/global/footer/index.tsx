@@ -20,7 +20,7 @@ import {
   TEXT_48_900,
 } from "@/app/styles/global-typography";
 import FooterLogo from "@/app/assets/Footer-Logo.png";
-import { ConnectButton } from "@/app/components/button/connect";
+import { WhiteListButton } from "@/app/components/button/connect";
 import { COMMINUTIES_ITEMS, FOOTER_MENU_ITEMS } from "../constants";
 import { bigShoulder } from "@/app/utils/font-loader";
 import DoubleBulletIcon from "@/app/assets/Double-Bullet.png";
@@ -44,10 +44,10 @@ export const Footer = () => {
           </TitleWrapper>
           <LeftSideSubTitle>Accessible, Engaging, Rewarding</LeftSideSubTitle>
           <ConnectButtonStyleMd>
-            <ConnectButton />
+            <WhiteListButton />
           </ConnectButtonStyleMd>
           <ConnectButtonStyle>
-            <ConnectButton customStyles={true} />
+            <WhiteListButton customStyles={true} />
           </ConnectButtonStyle>
         </LeftSideContent>
       </LeftSideWrapper>

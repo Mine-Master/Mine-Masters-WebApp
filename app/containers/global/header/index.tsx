@@ -8,7 +8,7 @@ import {
   ROW_ALIGN_CENTER__SPACE_B,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
-import { ConnectButton } from "@/app/components/button/connect";
+import { WhiteListButton } from "@/app/components/button/connect";
 import useScrollingUp from "@/app/hooks/scroll";
 import { css } from "@emotion/react";
 import { mediaQueries } from "@/app/styles/mediaQueries";
@@ -38,7 +38,7 @@ export const Header = () => {
         <NavbarLogoWrapper>
           <Image src={Logo} alt="Logo" />
           <Navbar />
-          <ConnectButton />
+          <WhiteListButton />
         </NavbarLogoWrapper>
       </HeaderContainer>
       <MobileHeader>
@@ -69,7 +69,7 @@ export const Header = () => {
             </ImageWrapper>
             <NavbarMobile />
             <ConnectButtonStyle>
-              <ConnectButton customStyles={true} />
+              <WhiteListButton customStyles={true} />
             </ConnectButtonStyle>
             <Communities>
               <CommunitiesTitel>Communities</CommunitiesTitel>
