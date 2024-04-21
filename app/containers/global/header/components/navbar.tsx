@@ -4,12 +4,15 @@ import styled from "@emotion/styled";
 import { NAVBAR_ITEMS } from "../../constants";
 import { SecondaryButton } from "@/app/components/button/secondary";
 import { mediaQueries } from "@/app/styles/mediaQueries";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
     <NavbarContainer>
       {NAVBAR_ITEMS.map((item, index) => (
-        <NavbarItem key={index}>{item.title}</NavbarItem>
+        <StyledLink href={item.href} key={index}>
+          <NavbarItem>{item.title}</NavbarItem>
+        </StyledLink>
       ))}
     </NavbarContainer>
   );
@@ -55,4 +58,8 @@ const NavbarItem = styled(SecondaryButton)`
     `}
   ${mediaQueries.lessThan("xs")`
     `}
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

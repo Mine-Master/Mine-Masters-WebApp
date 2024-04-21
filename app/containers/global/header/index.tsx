@@ -29,6 +29,18 @@ export const Header = () => {
     setOpen((prev) => !prev);
   };
 
+  const handleSocialIconClick = (socialUrl: string) => {
+    window.open(socialUrl, "_blank");
+  };
+
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <HeaderContainer
@@ -36,7 +48,7 @@ export const Header = () => {
         screenBegining={screenBegining}
       >
         <NavbarLogoWrapper>
-          <Image src={Logo} alt="Logo" />
+          <StyledLogo src={Logo} alt="Logo" onClick={handleLogoClick} />
           <Navbar />
           <WhiteListButton />
         </NavbarLogoWrapper>
@@ -74,18 +86,19 @@ export const Header = () => {
             <Communities>
               <CommunitiesTitel>Communities</CommunitiesTitel>
               <IconStyleSmall>
-                {COMMINUTIES_ITEMS.map(
-                  (item: { title: string; icon: string }, index) => {
-                    return (
-                      <ItemWrapper key={index}>
-                        {" "}
-                        <IconStyle>
-                          <CommunityIcon src={item.icon} alt={item.title} />{" "}
-                        </IconStyle>
-                      </ItemWrapper>
-                    );
-                  }
-                )}
+                {COMMINUTIES_ITEMS.map((item, index) => {
+                  return (
+                    <ItemWrapper
+                      onClick={() => handleSocialIconClick(item.url)}
+                      key={index}
+                    >
+                      {" "}
+                      <IconStyle>
+                        <CommunityIcon src={item.icon} alt={item.title} />{" "}
+                      </IconStyle>
+                    </ItemWrapper>
+                  );
+                })}
               </IconStyleSmall>
             </Communities>
           </DrawerWrappe>
@@ -340,9 +353,15 @@ const IconStyleSmall = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
   justify-content: space-between;
 `;
-const ItemWrapper = styled("div")``;
+const ItemWrapper = styled("div")`
+  cursor: pointer;
+`;
 const IconStyle = styled("div")``;
 const CommunityIcon = styled(Image)`
   width: 35px;
   height: 35px;
+`;
+
+const StyledLogo = styled(Image)`
+  cursor: pointer;
 `;

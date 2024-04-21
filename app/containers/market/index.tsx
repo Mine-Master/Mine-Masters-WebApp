@@ -24,7 +24,7 @@ import { mediaQueries } from "@/app/styles/mediaQueries";
 
 export const Marketplace = () => {
   return (
-    <MarketplaceContainer>
+    <MarketplaceContainer id="Marketplace">
       <BackgroundImageContainer>
         <ContentContainer>
           <MarketplaceLogoWrapper>

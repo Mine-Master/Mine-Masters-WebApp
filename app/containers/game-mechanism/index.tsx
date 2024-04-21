@@ -6,7 +6,7 @@ import { mediaQueries } from "@/app/styles/mediaQueries";
 
 export const GameMechanics = () => {
   return (
-    <GameMechanicsContainer>
+    <GameMechanicsContainer id="GameMechanism">
       <GameMechanicsContent>
         <SectionTitle>Game Mechanism</SectionTitle>
       </GameMechanicsContent>

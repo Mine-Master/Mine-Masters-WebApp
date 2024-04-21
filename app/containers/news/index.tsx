@@ -18,7 +18,7 @@ import { Divider } from "@mui/material";
 
 export const News = () => {
   return (
-    <NewsContainer>
+    <NewsContainer id="Events">
       <SectionTitle>News & Events</SectionTitle>
       <ItemsWrapper>
         <NewsItem>

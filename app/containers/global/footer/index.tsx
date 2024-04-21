@@ -1,12 +1,10 @@
 "use client";
 import styled from "@emotion/styled";
-import Logo from "@/app/assets/Logo.svg";
 import Image from "next/image";
 import {
   COLUMN_ALIGN_START__JUSTIFY_START,
   MAX_WIDTH_RESPONSIVENESS,
   ROW_ALIGN_CENTER__JUSTIFY_START,
-  ROW_ALIGN_START__JUSTIFY_END,
   ROW_ALIGN_START__JUSTIFY_START,
   ROW_ALIGN_START__SPACE_B,
   ROW_CENTER,
@@ -14,9 +12,7 @@ import {
 import {
   TEXT_106_900,
   TEXT_16_500,
-  TEXT_24_400,
   TEXT_24_500,
-  TEXT_48_400,
   TEXT_48_900,
 } from "@/app/styles/global-typography";
 import FooterLogo from "@/app/assets/Footer-Logo.png";
@@ -28,8 +24,11 @@ import { SecondaryButton } from "@/app/components/button/secondary";
 import { mediaQueries } from "@/app/styles/mediaQueries";
 
 export const Footer = () => {
+  const handleSocialIconClick = (socialUrl: string) => {
+    window.open(socialUrl, "_blank");
+  };
   return (
-    <FooterContainer>
+    <FooterContainer id="Footer">
       <LeftSideWrapper>
         <StyledLogo src={FooterLogo} alt="logo" />
         <LeftSideContent>
@@ -63,19 +62,20 @@ export const Footer = () => {
           <RightSideTite>Communities</RightSideTite>
           <HorizontalDivider />
           <IconStyleSmall>
-            {COMMINUTIES_ITEMS.map(
-              (item: { title: string; icon: string }, index) => {
-                return (
-                  <ItemWrapper key={index}>
-                    {" "}
-                    <IconStyle>
-                      <CommunityIcon src={item.icon} alt={item.title} />{" "}
-                    </IconStyle>
-                    <ItemList key={item.title}>{item.title}</ItemList>
-                  </ItemWrapper>
-                );
-              }
-            )}
+            {COMMINUTIES_ITEMS.map((item, index) => {
+              return (
+                <ItemWrapper
+                  key={index}
+                  onClick={() => handleSocialIconClick(item.url)}
+                >
+                  {" "}
+                  <IconStyle>
+                    <CommunityIcon src={item.icon} alt={item.title} />{" "}
+                  </IconStyle>
+                  <ItemList key={item.title}>{item.title}</ItemList>
+                </ItemWrapper>
+              );
+            })}
           </IconStyleSmall>
         </RightSideItemTwo>
       </RightSideWrapper>
@@ -283,6 +283,7 @@ const StyledLogo = styled(Image)`
 const ItemWrapper = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
   margin-bottom: 16px;
+  cursor: pointer;
   ${mediaQueries.lessThan("sm")`
    margin-bottom:0;
    `}
