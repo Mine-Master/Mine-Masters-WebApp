@@ -3,6 +3,7 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Header } from "./containers/global/header";
 import { Footer, FooterMargin } from "./containers/global/footer";
+import { ModalProvider } from "./contexts/modal";
 
 const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -66,10 +67,12 @@ export default function RootLayout({
           width: "100%",
         }}
       >
-        <Header />
-        {children}
-        <Footer />
-        <FooterMargin />
+        <ModalProvider>
+          <Header />
+          {children}
+          <Footer />
+          <FooterMargin />
+        </ModalProvider>
       </body>
     </html>
   );

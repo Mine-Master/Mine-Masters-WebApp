@@ -7,7 +7,6 @@ import {
   ROW_ALIGN_CENTER__JUSTIFY_START,
   ROW_ALIGN_START__JUSTIFY_START,
   ROW_ALIGN_START__SPACE_B,
-  ROW_CENTER,
 } from "@/app/styles/global-styles";
 import {
   TEXT_106_900,
@@ -22,6 +21,7 @@ import { bigShoulder } from "@/app/utils/font-loader";
 import DoubleBulletIcon from "@/app/assets/Double-Bullet.png";
 import { SecondaryButton } from "@/app/components/button/secondary";
 import { mediaQueries } from "@/app/styles/mediaQueries";
+import Link from "next/link";
 
 export const Footer = () => {
   const handleSocialIconClick = (socialUrl: string) => {
@@ -55,7 +55,11 @@ export const Footer = () => {
           <RightSideTite>Menu</RightSideTite>
           <HorizontalDivider />
           {FOOTER_MENU_ITEMS.map((item, index) => {
-            return <ItemList key={index}>{item.title}</ItemList>;
+            return (
+              <StyledLink href={item.href} key={index}>
+                <ItemList>{item.title}</ItemList>
+              </StyledLink>
+            );
           })}
         </RightSideItemOne>
         <RightSideItemTwo>
@@ -374,4 +378,8 @@ const ConnectButtonStyle = styled("div")`
     color: white; 
   }
 `}
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

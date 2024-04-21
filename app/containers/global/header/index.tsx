@@ -12,7 +12,7 @@ import { WhiteListButton } from "@/app/components/button/connect";
 import useScrollingUp from "@/app/hooks/scroll";
 import { css } from "@emotion/react";
 import { mediaQueries } from "@/app/styles/mediaQueries";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Drawer, IconButton } from "@mui/material";
 import drag_handle from "@/app/assets/drag_handle.svg";
 import Times from "@/app/assets/Times.svg";
@@ -20,13 +20,17 @@ import { TEXT_16_500, TEXT_64_900 } from "@/app/styles/global-typography";
 import { bigShoulder } from "@/app/utils/font-loader";
 import { COMMINUTIES_ITEMS } from "../constants";
 import { NavbarMobile } from "./components/navbarMobile";
-
+import { ModalContext } from "@/app/contexts/modal";
 export const Header = () => {
   const { scrollingUp, screenBegining } = useScrollingUp();
-  const [open, setOpen] = useState(false);
+  // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  //@ts-ignore
+  let { isDrawerOpen, setIsDrawerOpen } = useContext(ModalContext);
 
   const handleDrawerOpenClose = () => {
-    setOpen((prev) => !prev);
+    //@ts-ignore
+    setIsDrawerOpen((prev) => !prev);
   };
 
   const handleSocialIconClick = (socialUrl: string) => {
@@ -57,7 +61,10 @@ export const Header = () => {
         <IconButtonStyle onClick={handleDrawerOpenClose}>
           <Image src={drag_handle} alt="Drag Handle" />
         </IconButtonStyle>
-        <DrawerStyles open={open} onClose={() => setOpen(false)}>
+        <DrawerStyles
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+        >
           <DrawerWrappe>
             <TimesSign onClick={handleDrawerOpenClose}>
               <Image src={Times} alt="Times" width={32} height={32} />

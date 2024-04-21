@@ -35,19 +35,19 @@ export const MOBILE_MENU_ITEMS = [
   },
   {
     title: "Marketplace",
-    href: "/Marketplace",
+    href: "/#Marketplace",
   },
   {
     title: "Communities",
-    href: "/Communities",
+    href: "/#Footer",
   },
   {
     title: "Events",
-    href: "/Events",
+    href: "/#Events",
   },
   {
     title: "FAQ",
-    href: "/FAQ",
+    href: "/#FAQ",
   },
   {
     title: "Terms of Use",
@@ -62,19 +62,19 @@ export const MOBILE_MENU_ITEMS = [
 export const FOOTER_MENU_ITEMS = [
   {
     title: "Game Mechanism",
-    href: "/",
+    href: "/#GameMechanism",
   },
   {
     title: "Marketplace",
-    href: "/Marketplace",
+    href: "/#Marketplace",
   },
   {
     title: "Events",
-    href: "/Events",
+    href: "/#Events",
   },
   {
     title: "FAQ",
-    href: "/FAQ",
+    href: "/#FAQ",
   },
   {
     title: "Terms of Use",
