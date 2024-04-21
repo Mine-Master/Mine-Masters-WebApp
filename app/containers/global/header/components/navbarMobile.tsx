@@ -4,12 +4,22 @@ import styled from "@emotion/styled";
 import { MOBILE_MENU_ITEMS } from "../../constants";
 import { SecondaryButton } from "@/app/components/button/secondary";
 import { mediaQueries } from "@/app/styles/mediaQueries";
+import Link from "next/link";
+import { ModalContext } from "@/app/contexts/modal";
+import { useContext } from "react";
 
 export const NavbarMobile = () => {
+  //@ts-ignore
+  let { setIsDrawerOpen } = useContext(ModalContext);
+  const handleItemClick = () => {
+    setIsDrawerOpen(false);
+  };
   return (
     <NavbarContainer>
       {MOBILE_MENU_ITEMS.map((item, index) => (
-        <NavbarItem key={index}>{item.title}</NavbarItem>
+        <StyledLink href={item.href} key={index} onClick={handleItemClick}>
+          <NavbarItem>{item.title}</NavbarItem>
+        </StyledLink>
       ))}
     </NavbarContainer>
   );
@@ -45,4 +55,7 @@ const NavbarItem = styled(SecondaryButton)`
   &:hover {
     color: #c77dff;
   }
+`;
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

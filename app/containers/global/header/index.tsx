@@ -8,11 +8,11 @@ import {
   ROW_ALIGN_CENTER__SPACE_B,
   ROW_ALIGN_START__JUSTIFY_START,
 } from "@/app/styles/global-styles";
-import { ConnectButton } from "@/app/components/button/connect";
+import { WhiteListButton } from "@/app/components/button/connect";
 import useScrollingUp from "@/app/hooks/scroll";
 import { css } from "@emotion/react";
 import { mediaQueries } from "@/app/styles/mediaQueries";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Drawer, IconButton } from "@mui/material";
 import drag_handle from "@/app/assets/drag_handle.svg";
 import Times from "@/app/assets/Times.svg";
@@ -20,13 +20,29 @@ import { TEXT_16_500, TEXT_64_900 } from "@/app/styles/global-typography";
 import { bigShoulder } from "@/app/utils/font-loader";
 import { COMMINUTIES_ITEMS } from "../constants";
 import { NavbarMobile } from "./components/navbarMobile";
-
+import { ModalContext } from "@/app/contexts/modal";
 export const Header = () => {
   const { scrollingUp, screenBegining } = useScrollingUp();
-  const [open, setOpen] = useState(false);
+  // const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  //@ts-ignore
+  let { isDrawerOpen, setIsDrawerOpen } = useContext(ModalContext);
 
   const handleDrawerOpenClose = () => {
-    setOpen((prev) => !prev);
+    //@ts-ignore
+    setIsDrawerOpen((prev) => !prev);
+  };
+
+  const handleSocialIconClick = (socialUrl: string) => {
+    window.open(socialUrl, "_blank");
+  };
+
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -36,16 +52,19 @@ export const Header = () => {
         screenBegining={screenBegining}
       >
         <NavbarLogoWrapper>
-          <Image src={Logo} alt="Logo" />
+          <StyledLogo src={Logo} alt="Logo" onClick={handleLogoClick} />
           <Navbar />
-          <ConnectButton />
+          <WhiteListButton />
         </NavbarLogoWrapper>
       </HeaderContainer>
       <MobileHeader>
         <IconButtonStyle onClick={handleDrawerOpenClose}>
           <Image src={drag_handle} alt="Drag Handle" />
         </IconButtonStyle>
-        <DrawerStyles open={open} onClose={() => setOpen(false)}>
+        <DrawerStyles
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+        >
           <DrawerWrappe>
             <TimesSign onClick={handleDrawerOpenClose}>
               <Image src={Times} alt="Times" width={32} height={32} />
@@ -69,23 +88,24 @@ export const Header = () => {
             </ImageWrapper>
             <NavbarMobile />
             <ConnectButtonStyle>
-              <ConnectButton customStyles={true} />
+              <WhiteListButton customStyles={true} />
             </ConnectButtonStyle>
             <Communities>
               <CommunitiesTitel>Communities</CommunitiesTitel>
               <IconStyleSmall>
-                {COMMINUTIES_ITEMS.map(
-                  (item: { title: string; icon: string }, index) => {
-                    return (
-                      <ItemWrapper key={index}>
-                        {" "}
-                        <IconStyle>
-                          <CommunityIcon src={item.icon} alt={item.title} />{" "}
-                        </IconStyle>
-                      </ItemWrapper>
-                    );
-                  }
-                )}
+                {COMMINUTIES_ITEMS.map((item, index) => {
+                  return (
+                    <ItemWrapper
+                      onClick={() => handleSocialIconClick(item.url)}
+                      key={index}
+                    >
+                      {" "}
+                      <IconStyle>
+                        <CommunityIcon src={item.icon} alt={item.title} />{" "}
+                      </IconStyle>
+                    </ItemWrapper>
+                  );
+                })}
               </IconStyleSmall>
             </Communities>
           </DrawerWrappe>
@@ -245,7 +265,7 @@ export const HeaderContainer = styled("header")<{
   `}
     ${mediaQueries.greaterThan("fhd")`
     width: 1920px;
-    left: calc(calc(100% - 1920px) / 2)
+    left: calc(calc(100% - 1920px) / 2);
   `}
 `;
 
@@ -272,64 +292,8 @@ const NavbarLogoWrapper = styled("div")`
   backdrop-filter: blur(120px);
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 24px;
-
-  /* border: 2px solid;
-
-  border-image: linear-gradient(
-    93.47deg,
-    #9d4edd 0%,
-    #5a189a 52.7%,
-    #10002b 112.04%
-  ); */
   position: relative;
   z-index: 1;
-  &::before {
-    /* content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    -webkit-mask: linear-gradient(
-        93.47deg,
-        #9d4edd 0%,
-        #5a189a 52.7%,
-        #10002b 112.04%
-      )
-      content-box;
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    left: 0;
-    inset: 0;
-    z-index: -1; */
-    /* content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 2px;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.15),
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.25)
-    );
-    -webkit-mask: linear-gradient(
-          93.47deg,
-          #9d4edd 0%,
-          #5a189a 52.7%,
-          #10002b 112.04%
-        )
-        content-box,
-      linear-gradient(
-        0deg,
-        rgba(254, 247, 255, 0.24),
-        rgba(254, 247, 255, 0.24)
-      );
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1; */
-  }
 
   ${mediaQueries.lessThan("lg")`
     padding: 15px;
@@ -347,6 +311,9 @@ const NavbarLogoWrapper = styled("div")`
   `}
   ${mediaQueries.lessThan("sm")`
       padding: 10px;
+  `}
+    ${mediaQueries.greaterThan("fhd")`
+  width: 100%;
   `}
 `;
 
@@ -393,9 +360,15 @@ const IconStyleSmall = styled("div")`
   ${ROW_ALIGN_CENTER__JUSTIFY_START}
   justify-content: space-between;
 `;
-const ItemWrapper = styled("div")``;
+const ItemWrapper = styled("div")`
+  cursor: pointer;
+`;
 const IconStyle = styled("div")``;
 const CommunityIcon = styled(Image)`
   width: 35px;
   height: 35px;
+`;
+
+const StyledLogo = styled(Image)`
+  cursor: pointer;
 `;

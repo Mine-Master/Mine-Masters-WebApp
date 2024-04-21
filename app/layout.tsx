@@ -3,6 +3,7 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Header } from "./containers/global/header";
 import { Footer, FooterMargin } from "./containers/global/footer";
+import { ModalProvider } from "./contexts/modal";
 
 const ubontu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -50,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" sizes="any" />
@@ -66,10 +67,12 @@ export default function RootLayout({
           width: "100%",
         }}
       >
-        <Header />
-        {children}
-        <Footer />
-        <FooterMargin />
+        <ModalProvider>
+          <Header />
+          {children}
+          <Footer />
+          <FooterMargin />
+        </ModalProvider>
       </body>
     </html>
   );

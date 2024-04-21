@@ -9,7 +9,6 @@ import { WarPeace } from "./containers/war-peace";
 import { Marketplace } from "./containers/market";
 import { News } from "./containers/news";
 import { Faq } from "./containers/faq";
-import { FooterMargin } from "./containers/global/footer";
 import styled from "@emotion/styled";
 export default function Home() {
   return (

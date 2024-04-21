@@ -15,7 +15,7 @@ import OrangeAxeIcon from "../../assets/Axe-Orange.svg";
 import BlueSquare from "@/app/assets/Blue-Rect.png";
 import OrangeSquare from "@/app/assets/Orange-Rect.png";
 import { keyframes } from "@mui/material";
-import { ConnectButton } from "@/app/components/button/connect";
+import { WhiteListButton } from "@/app/components/button/connect";
 import { mediaQueries } from "@/app/styles/mediaQueries";
 
 const ChangeValueGenerator = () => {
@@ -123,7 +123,7 @@ export const Hero = () => {
           <OrangeDescription> Engage in exhilarating wars</OrangeDescription>
         </HeroDescription>
         <ConnectButtonStyle>
-          <ConnectButton customStyles={true} />
+          <WhiteListButton customStyles={true} />
         </ConnectButtonStyle>
       </ContentContainer>
     </HeroContainer>

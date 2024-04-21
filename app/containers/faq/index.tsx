@@ -23,7 +23,7 @@ export const Faq = () => {
     }
   };
   return (
-    <FaqContainer>
+    <FaqContainer id="FAQ">
       <SectionTitle>FAQ</SectionTitle>
       {FAQ_ITEMS.map(({ title, description }, index) => (
         <FaqItem

@@ -1,4 +1,4 @@
-import { ConnectButton } from "@/app/components/button/connect";
+import { WhiteListButton } from "@/app/components/button/connect";
 import { PrimaryButton } from "@/app/components/button/primary";
 import {
   COLUMN_ALIGN_CENTER___JUSTIFY_START,
@@ -24,10 +24,10 @@ export const StartMineMasters = () => {
         <LeftSideWrapper>
           <LeftSideTitle className={bigShoulder.className}>Start</LeftSideTitle>
           <ConnectButtonStyle>
-            <ConnectButton />
+            <WhiteListButton />
           </ConnectButtonStyle>
           <ConnectButtonWrapper>
-            <ConnectButton customStyles={true} />
+            <WhiteListButton customStyles={true} />
           </ConnectButtonWrapper>
         </LeftSideWrapper>
         <VerticalDivider orientation="vertical" flexItem />
